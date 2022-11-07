@@ -1,0 +1,6 @@
+data/as-caida2007.txt
+load graph: n 26475 m 106762 maxD 2628
+k:2 q:12
+plexEnumerator2
+time:470ms
+Maximal K-Plex Count: 5336

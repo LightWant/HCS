@@ -1,0 +1,2 @@
+/usr/bin/ar qc libplexEnumerator.a CMakeFiles/plexEnumerator.dir/plexEnumerator4.cpp.o
+/usr/bin/ranlib libplexEnumerator.a

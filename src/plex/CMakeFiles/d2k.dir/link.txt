@@ -1,0 +1,2 @@
+/usr/bin/ar qc libd2k.a CMakeFiles/d2k.dir/d2ksginC.cpp.o
+/usr/bin/ranlib libd2k.a
