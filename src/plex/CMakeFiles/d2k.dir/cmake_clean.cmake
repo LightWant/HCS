@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/d2k.dir/d2ksginC.cpp.o"
-  "CMakeFiles/d2k.dir/d2ksginC.cpp.o.d"
+  "CMakeFiles/d2k.dir/d2kng.cpp.o"
+  "CMakeFiles/d2k.dir/d2kng.cpp.o.d"
   "libd2k.a"
   "libd2k.pdb"
 )

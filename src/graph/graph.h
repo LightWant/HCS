@@ -142,7 +142,10 @@ public:
     Graph() {}
     void readFromText(const std::string & fPath, bool noUVM = false);
     void readFromTextDoubleEdges(const std::string & fPath);
+	void readFromTextNodes(const std::string & fPath);
+	
     void readFromBin(const std::string & directory);
+	void saveAsBin(const std::string & directory);
     void changeToCoreOrder();
 
     ui degree(ui u);

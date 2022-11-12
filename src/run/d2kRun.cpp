@@ -34,7 +34,6 @@ int main(int argc, char * argv[])
     else if(ac.exist("-f_txtD")) g.readFromTextDoubleEdges(ac["-f_txtD"]);
     else g.readFromBin(ac["-f"]);
 
-
     std::cout << "load graph: n " << g.n << " m " << g.m << " maxD " << g.maxD << std::endl;
 
     auto s1 = std::chrono::steady_clock::now();

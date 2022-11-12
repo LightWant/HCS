@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/yexw/maximalKPlex/src/plex/d2ksginC.cpp" "src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o" "gcc" "src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o.d"
+  "/home/yexw/maximalKPlex/src/plex/d2kng.cpp" "src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o" "gcc" "src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o.d"
   )
 
 # Targets to which this target links.

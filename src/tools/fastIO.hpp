@@ -6,7 +6,7 @@
 #include "filesystem.hpp"
 #include <cstdint>
 
-constexpr int PAGESIZE = 1024*4;
+constexpr int PAGESIZE = 1024*10000;
 
 
 class fastIO {

@@ -144,29 +144,105 @@ d2k/fast:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/build
 .PHONY : d2k/fast
 
-d2ksginC.o: d2ksginC.cpp.o
-.PHONY : d2ksginC.o
+# Convenience name for target.
+src/plex/CMakeFiles/plexCounting.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/plex/CMakeFiles/plexCounting.dir/rule
+.PHONY : src/plex/CMakeFiles/plexCounting.dir/rule
+
+# Convenience name for target.
+plexCounting: src/plex/CMakeFiles/plexCounting.dir/rule
+.PHONY : plexCounting
+
+# fast build rule for target.
+plexCounting/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/build
+.PHONY : plexCounting/fast
+
+# Convenience name for target.
+src/plex/CMakeFiles/kPList.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/plex/CMakeFiles/kPList.dir/rule
+.PHONY : src/plex/CMakeFiles/kPList.dir/rule
+
+# Convenience name for target.
+kPList: src/plex/CMakeFiles/kPList.dir/rule
+.PHONY : kPList
+
+# fast build rule for target.
+kPList/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/kPList.dir/build.make src/plex/CMakeFiles/kPList.dir/build
+.PHONY : kPList/fast
+
+d2kng.o: d2kng.cpp.o
+.PHONY : d2kng.o
 
 # target to build an object file
-d2ksginC.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o
-.PHONY : d2ksginC.cpp.o
+d2kng.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o
+.PHONY : d2kng.cpp.o
 
-d2ksginC.i: d2ksginC.cpp.i
-.PHONY : d2ksginC.i
+d2kng.i: d2kng.cpp.i
+.PHONY : d2kng.i
 
 # target to preprocess a source file
-d2ksginC.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.i
-.PHONY : d2ksginC.cpp.i
+d2kng.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/d2kng.cpp.i
+.PHONY : d2kng.cpp.i
 
-d2ksginC.s: d2ksginC.cpp.s
-.PHONY : d2ksginC.s
+d2kng.s: d2kng.cpp.s
+.PHONY : d2kng.s
 
 # target to generate assembly for a file
-d2ksginC.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.s
-.PHONY : d2ksginC.cpp.s
+d2kng.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/d2k.dir/build.make src/plex/CMakeFiles/d2k.dir/d2kng.cpp.s
+.PHONY : d2kng.cpp.s
+
+kPList.o: kPList.cpp.o
+.PHONY : kPList.o
+
+# target to build an object file
+kPList.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/kPList.dir/build.make src/plex/CMakeFiles/kPList.dir/kPList.cpp.o
+.PHONY : kPList.cpp.o
+
+kPList.i: kPList.cpp.i
+.PHONY : kPList.i
+
+# target to preprocess a source file
+kPList.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/kPList.dir/build.make src/plex/CMakeFiles/kPList.dir/kPList.cpp.i
+.PHONY : kPList.cpp.i
+
+kPList.s: kPList.cpp.s
+.PHONY : kPList.s
+
+# target to generate assembly for a file
+kPList.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/kPList.dir/build.make src/plex/CMakeFiles/kPList.dir/kPList.cpp.s
+.PHONY : kPList.cpp.s
+
+plexCountingV3.o: plexCountingV3.cpp.o
+.PHONY : plexCountingV3.o
+
+# target to build an object file
+plexCountingV3.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV3.cpp.o
+.PHONY : plexCountingV3.cpp.o
+
+plexCountingV3.i: plexCountingV3.cpp.i
+.PHONY : plexCountingV3.i
+
+# target to preprocess a source file
+plexCountingV3.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV3.cpp.i
+.PHONY : plexCountingV3.cpp.i
+
+plexCountingV3.s: plexCountingV3.cpp.s
+.PHONY : plexCountingV3.s
+
+# target to generate assembly for a file
+plexCountingV3.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV3.cpp.s
+.PHONY : plexCountingV3.cpp.s
 
 plexEnumerator4.o: plexEnumerator4.cpp.o
 .PHONY : plexEnumerator4.o
@@ -201,10 +277,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... d2k"
+	@echo "... kPList"
+	@echo "... plexCounting"
 	@echo "... plexEnumerator"
-	@echo "... d2ksginC.o"
-	@echo "... d2ksginC.i"
-	@echo "... d2ksginC.s"
+	@echo "... d2kng.o"
+	@echo "... d2kng.i"
+	@echo "... d2kng.s"
+	@echo "... kPList.o"
+	@echo "... kPList.i"
+	@echo "... kPList.s"
+	@echo "... plexCountingV3.o"
+	@echo "... plexCountingV3.i"
+	@echo "... plexCountingV3.s"
 	@echo "... plexEnumerator4.o"
 	@echo "... plexEnumerator4.i"
 	@echo "... plexEnumerator4.s"

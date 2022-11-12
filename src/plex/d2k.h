@@ -32,6 +32,7 @@ struct nonNeiMatainer{
     uint32_t * getBuffer(uint32_t u) {return buffer.data() + u * k;}
 };
 
+#define D2KNG
 class d2k {
 private:
     Graph g, sg;
@@ -52,6 +53,12 @@ private://the prune technique of dai
 
 private:
     void bkPivot(ui deep, ui stX, ui edX, ui edC, ui edP);
+
+
+#ifdef D2KNG
+private://nadj
+    std::vector<std::vector<ui>> nadj;
+#endif
 
 public:
     d2k(Graph && g, ui k, ui q):g(g), k(k), q(q) {  

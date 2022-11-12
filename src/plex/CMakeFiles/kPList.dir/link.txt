@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkPList.a CMakeFiles/kPList.dir/kPList.cpp.o
+/usr/bin/ranlib libkPList.a

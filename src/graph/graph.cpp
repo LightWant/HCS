@@ -135,6 +135,55 @@ void Graph::readFromText(const std::string & fPath, bool noUVM) {
     }
 }
 
+void Graph::readFromTextNodes(const std::string & fPath) {
+    std::cout << fPath << std::endl;
+
+    fastIO in(fPath.c_str(), "r");
+    
+    in.getUInt(n);
+
+    m = 0;
+    for(ui i = 0; i < n; i++) {
+        ui u, du;
+        in.getUInt(u);
+        in.getUInt(du);
+        m += du;
+    }
+printf("edges %u\n", m);fflush(stdout);
+    m *= 2;
+    edges.resize(m);
+    for(ui i = 0; i < m; i++) {
+        ui u, v;
+        in.getUInt(u);
+        in.getUInt(v);
+
+        edges.push_back(P{u, v});
+    }
+    
+    pEdge.resize(m);
+    pIdx.resize(n + 1);
+
+    pIdx[0] = 0;
+    for(ui i = 0; i < edges.size(); i++) {
+        pIdx[edges[i].first + 1]++;
+    }
+    for(ui i = 1; i <= n; i++) pIdx[i] += pIdx[i - 1];
+
+    for(ui i = 0; i < edges.size(); i++) {
+// if(pIdx[edges[i].first] >= m)
+// std::cout << ' ' << edges[i].first << ' ' <<  pIdx[edges[i].first] << std::endl;
+        pEdge[pIdx[edges[i].first]++] = edges[i].second;
+    }
+
+    for(ui i = n; i >= 1; i--) pIdx[i] = pIdx[i - 1];
+    pIdx[0] = 0;
+
+    for(ui u = 0; u < n; u++) {
+        std::sort(pEdge.begin() + pIdx[u], pEdge.begin() + pIdx[u + 1]);
+        maxD = std::max(maxD, pIdx[u + 1] - pIdx[u]);
+    }
+}
+
 void Graph::readFromBin(const std::string & directory) {
     fastIO readEdge(directory + "edge.bin", "rb");
     fastIO readIdx(directory + "idx.bin", "rb");
@@ -159,6 +208,14 @@ void Graph::readFromBin(const std::string & directory) {
 
     for(ui u = 0; u < n; u++) {
         maxD = std::max(maxD, pIdx[u + 1] - pIdx[u]);
+    }
+    
+    pIdx2.resize(n);
+    for(ui u = 0; u < n; u++) {
+        maxD = std::max(maxD, pIdx[u + 1] - pIdx[u]);
+
+        pIdx2[u] = pIdx[u];
+        while(pIdx2[u] < pIdx[u + 1] && pEdge[pIdx2[u]] < u) pIdx2[u]++;
     }
 }
 
@@ -222,6 +279,19 @@ void Graph::changeToCoreOrder() {
             }
         }
     }
+}
+
+void Graph::saveAsBin(const std::string & directory) {
+    std::string idxPath = directory + "idx.bin";
+    std::string edgePath = directory + "edge.bin";
+    
+    FILE * fidx = fopen(idxPath.c_str(), "wb");
+    fwrite(pIdx.data(), sizeof(ui), n + 1, fidx);
+    fclose(fidx);
+
+    FILE * fedge = fopen(edgePath.c_str(), "wb");
+    fwrite(pEdge.data(), sizeof(ui), m, fedge);
+    fclose(fedge);
 }
 
 ui Graph::degree(ui u) { return pIdx[u + 1] - pIdx[u]; }

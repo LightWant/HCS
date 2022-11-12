@@ -1,5 +1,6 @@
 #include "d2k.h"
 // #define DDDEBUG
+// #define BASELINE
 
 ui d2k::run() {
 #ifdef DDDEBUG
@@ -210,6 +211,50 @@ for(ui i = 0; i < edX; i++) {
         for(ui i = stX; i < edX; i++) nn.clear(X[i]);
     }
 
+#ifdef BASELINE
+#define BASELINEK 2
+#define BASELINEQ 3
+auto print = [&](uint32_t x) {
+    for(ui u = 0; u < g.n; u++) if((1<<u) & x) printf("%u ", u);
+    printf("\n");
+};
+auto check = [&](ui x) {
+    ui sz = 0;
+    for(ui u = 0; u < g.n; u++) if((1<<u) & x) sz++;
+    if(sz < BASELINEQ) return false;
+
+    for(ui u = 0; u < g.n; u++) if((1<<u) & x){
+        ui d = 0;
+        for(ui v = 0; v < g.n; v++) if((1<<v) & x){
+            if(g.connectHash(u, v)) d++;
+        }
+        if(d + BASELINEK < sz) return false; 
+    }
+
+    return true;
+};
+
+ui cnt = 0;
+for(uint32_t i = (1<<g.n)-1; i > 0; i--) {
+    if(check(i)) {
+        //isMaximal
+        bool isMaximal = true;
+        for(ui u = 0; u < g.n; u++) {
+            if((1<<u) & i) continue;
+            if(check(i | (1<<u))) {
+                isMaximal = false;
+                break;
+            }
+        }
+        if(isMaximal) {
+            cnt++;
+            print(i);
+        }
+    }
+}
+printf("cnt:%u\n", cnt);
+#endif
+
     return answer;
 }
 
@@ -222,6 +267,11 @@ printf("X:"); for(ui i = stX; i < edX; i++) printf("%u ", X[i]); printf("\n");
 fflush(stdout);
 #endif
 
+    auto isMaximal = [&]() {
+        for(ui i = 0; i < edC; i++) if(nn.getCntNonNei(C[i]) != edP) return false;
+        for(ui i = stX; i < edX; i++) if(nn.getCntNonNei(C[i]) != edP) return false;
+        return true;
+    };
     if(edC == 0) {
 #ifdef DDDEBUG
 printf("    edC == 0\n");
@@ -237,6 +287,33 @@ printf("    P is ans!\n");
 
     if(edP + edC < q) return;
 
+    auto hasUniversalX = [&]() {
+        for(ui i = stX; i < edX; i++) {
+            if(nn.getCntNonNei(X[i])) continue;
+            if(sg.deg[deep - 1][X[i]] == edC) return true;
+// ui d = 0;
+// for(ui j = 0; j < edC; j++) {
+//     if(g.connectHash(X[i], C[j])) d++;
+// }
+// assert(sg.deg[deep - 1][X[i]] == d);
+            // ui cntNN = nn.getCntNonNei(X[i]);
+            // if(cntNN + 1 + edC - sg.deg[deep - 1][X[i]] <= k) {
+            //     bool canAdd = true;
+            //     for(ui j = 0; j < cntNN; j++) {
+            //         ui w = nn.buffer[X[i]*k + j];
+            //         if(nn.getCntNonNei(w) + edC - sg.deg[deep-1][w] >= k) {
+            //             canAdd = false; break;
+            //         }
+            //     }
+            //     if(!canAdd) continue;
+
+            //     if(canAdd) return true;
+            // }
+        }
+        return false;
+    };
+    
+
     //init deg from the pre level
     if(sg.deg[deep].size() == 0) sg.deg[deep].resize(g.n);
     for(ui i = 0; i < edC; i++) sg.deg[deep][C[i]]=sg.deg[deep-1][C[i]];
@@ -249,7 +326,15 @@ printf("\nPdeginC:");
 for(ui i = 0; i < edP; i++) printf("%u-%u ", P[i], sg.deg[deep][P[i]]);
 printf("\nXdeginC:");
 for(ui i = stX; i < edX; i++) printf("%u-%u ", X[i], sg.deg[deep][X[i]]);
+printf("\n");
 #endif
+
+    if(hasUniversalX()) {
+#ifdef DDDEBUG
+printf("Universial\n");
+#endif
+        return;
+    }
     //is P+C a k-plex
     ui minDPC = g.n;
     //find pivot in C and X with max degree in C
@@ -373,41 +458,49 @@ printf("\n");
 
     auto delDegreeInC = [&](ui v) {
 #ifdef DDDEBUG
-printf("del: %u:", v);
+printf("del %u:", v);
+for(ui i = 0; i < edC; i++) if(g.connectHash(v, C[i])) printf("%u ", C[i]);
+printf("\n");
+for(ui i = stX; i < edX; i++) if(g.connectHash(v, X[i])) printf("%u ", X[i]);
+printf("\n");
+for(ui i = 0; i < edP; i++) if(g.connectHash(v, P[i])) printf("%u ", P[i]);
+printf("\n");
 #endif
-        if(edC + edP + edX-stX < sg.degree2(v)) {
+        // if(edC + edP + edX-stX < sg.degree2(v)) {
             for(ui i = 0; i < edC; i++) if(g.connectHash(v, C[i])) sg.deg[deep][C[i]]--;
             for(ui i = stX; i < edX; i++) if(g.connectHash(v, X[i])) sg.deg[deep][X[i]]--;
             for(ui i = 0; i < edP; i++) if(g.connectHash(v, P[i])) sg.deg[deep][P[i]]--;
-        }
-        else
-        for(ui i = sg.pIdx[v]; i < sg.pIdx2[v]; i++) {
-            ui u = sg.pEdge[i];
-
-            if(C.isIn(u, 0, edC) || X.isIn(u, stX, edX) || P.isIn(u, 0, edP)) {
-#ifdef DDDEBUG
-printf("%u ", u);
-#endif
-                sg.deg[deep][u]--;
-            }
-        }
-#ifdef DDDEBUG
-printf("\n");
-#endif
+        // }
+//         else
+//         for(ui i = sg.pIdx[v]; i < sg.pIdx2[v]; i++) {
+//             ui u = sg.pEdge[i];
+// #ifdef DDDEBUG
+// printf("s%u ", u);
+// #endif
+//             if(C.isIn(u, 0, edC) || X.isIn(u, stX, edX) || P.isIn(u, 0, edP)) {
+// #ifdef DDDEBUG
+// printf("%u ", u);
+// #endif
+//                 sg.deg[deep][u]--;
+//             }
+//         }
+// #ifdef DDDEBUG
+// printf("\n");
+// #endif
     };
     auto addDegreeInC = [&](ui v) {
-        if(edC + edP + edX-stX < sg.degree2(v)) {
+        // if(edC + edP + edX-stX < sg.degree2(v)) {
             for(ui i = 0; i < edC; i++) if(g.connectHash(v, C[i])) sg.deg[deep][C[i]]++;
             for(ui i = stX; i < edX; i++) if(g.connectHash(v, X[i])) sg.deg[deep][X[i]]++;
             for(ui i = 0; i < edP; i++) if(g.connectHash(v, P[i])) sg.deg[deep][P[i]]++;
-        }
-        else
-        for(ui i = sg.pIdx[v]; i < sg.pIdx2[v]; i++) {
-            ui v = sg.pEdge[i];
-            if(C.isIn(v, 0, edC) || X.isIn(v, stX, edX) || P.isIn(v, 0, edP)) {
-                sg.deg[deep][v]++;
-            }
-        }
+        // }
+        // else
+        // for(ui i = sg.pIdx[v]; i < sg.pIdx2[v]; i++) {
+        //     ui v = sg.pEdge[i];
+        //     if(C.isIn(v, 0, edC) || X.isIn(v, stX, edX) || P.isIn(v, 0, edP)) {
+        //         sg.deg[deep][v]++;
+        //     }
+        // }
     };
 
     auto updateC = [&](ui v, LinearSet & T, ui ed) {
@@ -548,7 +641,7 @@ printf("continue %u\n", v);
             support[j] = k - nn.getCntNonNei(P[j]);
             s += k - nn.getCntNonNei(P[j]);
         }
-        ui up = edP + k - nn.getCntNonNei(v) + bucket[0].size();
+        ui up = edP + k - nn.getCntNonNei(v)+ bucket[0].size();
         for(ui j = 1; j < k; j++) {
             for(auto u: bucket[j]) {
                 ui minJ = 0, minS = k + 1;
@@ -587,7 +680,20 @@ printf("up prune\n");
 
         //build tmpC, tmpStX and tmpEdX for the next level
         ui tmpC = edC, tmpStX = stX, tmpEdX = edX;
-        for(ui j = 0; j < edP; j++) if(!g.connectHash(v, P[j])) nn.addNonNei(P[j], v);
+// ui tt = 0;
+//         for(ui j = 0; j < edP; j++) if(!g.connectHash(v, P[j])) {
+//             tt++,nn.addNonNei(P[j], v);
+// int f = 0;
+// for(ui i = 0, cntNN = nn.getCntNonNei(v); i < cntNN; i++) {
+//     if(P[j] == nn.buffer[v*k + i]) f++;
+// }
+// assert(f == 1);
+//         }
+// assert(nn.getCntNonNei(v) == tt);
+        for(ui i = 0, cntNN = nn.getCntNonNei(v); i < cntNN; i++) {
+            nn.addNonNei(nn.buffer[v*k + i], v);
+        }
+        nn.addNonNei(v, v);
         for(ui j = 0; j < edC; j++) if(!g.connectHash(v, C[j])) nn.addNonNei(C[j], v);
         for(ui j = stX; j < edX; j++) if(!g.connectHash(v, X[j])) nn.addNonNei(X[j], v);
 
@@ -608,11 +714,32 @@ printf("up prune\n");
                 X.changeToByPos(j, tmpStX++);
             }
         }
-
+// if(v == pv) {
+//     ui a = 0, b = 0, c = 0;
+//     for(ui j = 0; j < tmpC; j++) {
+//         if(g.connectHash(pv, C[j])) {
+//             bool is = false;
+//             for(ui i = 0; i < countOfNonNeihborOfPv; i++) {
+//                 if(g.connectHash(C[j], nn.buffer[pv*k + i])) {
+//                     is = true;
+//                     break;
+//                 }
+//             }
+//             if(is) b++;
+//             else a++;
+//         }
+//         else c++;
+//     }
+//     printf("%u, %u %u %u\n", deep, a, b, c);
+// }
         bkPivot(deep + 1, tmpStX, edX, tmpC, edP);
 
         for(ui j = tmpC; j < edC; j++) addDegreeInC(C[j]);
-        for(ui j = 0; j < edP; j++) if(!g.connectHash(v, P[j])) nn.pop(P[j]);
+        // for(ui j = 0; j < edP; j++) if(!g.connectHash(v, P[j])) nn.pop(P[j]);
+        nn.pop(v);
+        for(ui i = 0, cntNN = nn.getCntNonNei(v); i < cntNN; i++) {
+            nn.pop(nn.buffer[v*k + i]);
+        }
         for(ui j = 0; j < edC; j++) if(!g.connectHash(v, C[j])) nn.pop(C[j]);
         for(ui j = stX; j < edX; j++) if(!g.connectHash(v, X[j])) nn.pop(X[j]);
         

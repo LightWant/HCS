@@ -69,28 +69,28 @@ include src/plex/CMakeFiles/d2k.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/plex/CMakeFiles/d2k.dir/flags.make
 
-src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o: src/plex/CMakeFiles/d2k.dir/flags.make
-src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o: src/plex/d2ksginC.cpp
-src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o: src/plex/CMakeFiles/d2k.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o"
-	cd /home/yexw/maximalKPlex/src/plex && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o -MF CMakeFiles/d2k.dir/d2ksginC.cpp.o.d -o CMakeFiles/d2k.dir/d2ksginC.cpp.o -c /home/yexw/maximalKPlex/src/plex/d2ksginC.cpp
+src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o: src/plex/CMakeFiles/d2k.dir/flags.make
+src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o: src/plex/d2kng.cpp
+src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o: src/plex/CMakeFiles/d2k.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o"
+	cd /home/yexw/maximalKPlex/src/plex && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o -MF CMakeFiles/d2k.dir/d2kng.cpp.o.d -o CMakeFiles/d2k.dir/d2kng.cpp.o -c /home/yexw/maximalKPlex/src/plex/d2kng.cpp
 
-src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d2k.dir/d2ksginC.cpp.i"
-	cd /home/yexw/maximalKPlex/src/plex && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yexw/maximalKPlex/src/plex/d2ksginC.cpp > CMakeFiles/d2k.dir/d2ksginC.cpp.i
+src/plex/CMakeFiles/d2k.dir/d2kng.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d2k.dir/d2kng.cpp.i"
+	cd /home/yexw/maximalKPlex/src/plex && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yexw/maximalKPlex/src/plex/d2kng.cpp > CMakeFiles/d2k.dir/d2kng.cpp.i
 
-src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d2k.dir/d2ksginC.cpp.s"
-	cd /home/yexw/maximalKPlex/src/plex && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yexw/maximalKPlex/src/plex/d2ksginC.cpp -o CMakeFiles/d2k.dir/d2ksginC.cpp.s
+src/plex/CMakeFiles/d2k.dir/d2kng.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d2k.dir/d2kng.cpp.s"
+	cd /home/yexw/maximalKPlex/src/plex && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yexw/maximalKPlex/src/plex/d2kng.cpp -o CMakeFiles/d2k.dir/d2kng.cpp.s
 
 # Object files for target d2k
 d2k_OBJECTS = \
-"CMakeFiles/d2k.dir/d2ksginC.cpp.o"
+"CMakeFiles/d2k.dir/d2kng.cpp.o"
 
 # External object files for target d2k
 d2k_EXTERNAL_OBJECTS =
 
-src/plex/libd2k.a: src/plex/CMakeFiles/d2k.dir/d2ksginC.cpp.o
+src/plex/libd2k.a: src/plex/CMakeFiles/d2k.dir/d2kng.cpp.o
 src/plex/libd2k.a: src/plex/CMakeFiles/d2k.dir/build.make
 src/plex/libd2k.a: src/plex/CMakeFiles/d2k.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libd2k.a"
