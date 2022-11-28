@@ -38,7 +38,7 @@ class kplist {
 private:
     Graph g, sg;
     ui k = 0, q = 0;
-    std::vector<ui> C;
+    
     std::vector<ui> P;
     std::vector<ui> level;
     nonNeiMatainer nn;//non-neighbors
@@ -49,11 +49,11 @@ private://the prune technique of dai
     std::vector<ui> support;
 
 private:
-    void listing(ui deep, const std::vector<ui> & edC);
+    void listing(ui deep, const std::vector<ui> & C);
 
 public:
     kplist(Graph && g, ui k, ui q):g(g), k(k), q(q) { 
-        C.resize(g.n);
+        // C.resize(g.n);
         P.resize(g.n);
 
         sg.pIdx.resize(g.n);

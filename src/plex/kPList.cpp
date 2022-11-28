@@ -25,6 +25,7 @@ std::cout<<"    start "<<u<<' '<<answer<<std::endl;
         //X is 2-hop neighbors < u
         //C is 2-hop neighbors > u
         if(g.pIdx[u + 1] - g.pIdx2[u] + k < q) continue;
+        std::vector<ui> C;
         P.clear(); C.clear();
 
         P.push_back(u);

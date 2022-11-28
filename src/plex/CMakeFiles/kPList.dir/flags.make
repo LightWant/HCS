@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/yexw/maximalKPlex/src/plex/../graph -I/home/yexw/maximalKPlex/src/plex/../tools
 
-CXX_FLAGS =  -std=c++11 -march=native -mavx -O3
+CXX_FLAGS =  -std=c++14 -march=native -mavx -O3
 

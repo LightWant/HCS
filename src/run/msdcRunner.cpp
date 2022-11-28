@@ -1,6 +1,6 @@
 #include "../graph/graph.h"
 #include "../tools/getArgs.hpp"
-#include "../plex/maximalSDC.h"
+#include "../sdc/maximalSDC.h"
 #include <iostream>
 #include <chrono>
 #include <iomanip>
@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
         printUsage();
         return 0;
     }
-    else if(!ac.exist("-k") || !ac.exist("-q")) {
+    else if(!ac.exist("-s") || !ac.exist("-q")) {
         printUsage();
         return 0;
     }
@@ -45,11 +45,11 @@ int main(int argc, char * argv[])
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(s2 - s1);
     std::cout << "changeToCoreOrder:" << duration.count() << "ms" << std::endl;
 
-    int k = std::atoi(ac["-k"].c_str());
+    int s = std::atoi(ac["-s"].c_str());
     int q = std::atoi(ac["-q"].c_str());
-    std::cout << "k:" << k << " q:" << q << std::endl;
+    std::cout << "s:" << s << " q:" << q << std::endl;
 
-    msdc pM(std::move(g), k, q);
+    msdc pM(std::move(g), s, q);
 
     auto t1 = std::chrono::steady_clock::now();
     

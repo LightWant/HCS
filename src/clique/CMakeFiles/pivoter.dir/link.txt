@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpivoter.a CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o
+/usr/bin/ranlib libpivoter.a

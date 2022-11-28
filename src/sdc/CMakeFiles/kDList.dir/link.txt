@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkDList.a CMakeFiles/kDList.dir/kDList.cpp.o
+/usr/bin/ranlib libkDList.a

@@ -1,7 +1,6 @@
 #ifndef PLEXCOUNTING_H
 #define PLEXCOUNTING_H
 
-
 #include "../graph/graph.h"
 #include "../tools/types.hpp"
 #include "../tools/linearSet.hpp"
@@ -39,9 +38,6 @@ struct nonNeiMatainer{
 
 class plexCounting {
 private:
-    const ui maxSize = 1000;
-
-private:
     Graph g, sg;
     ui k = 0, q = 0;
     LinearSet C, P;
@@ -49,6 +45,7 @@ private:
     std::vector<ull> answers;
 
 private://combinatorial number
+    const ui maxSize = 1000;
     double ** CN, *bf3;
     ui maxD = maxSize*10, maxD2 = maxSize;
     void computeC() {

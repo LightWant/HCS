@@ -7,7 +7,7 @@
 #include <utility>
 #include <immintrin.h>
 #include <cstring>
-using P = std::pair<ui, ui>;
+using Pair = std::pair<ui, ui>;
 
 class CuckooHash
 {
@@ -20,7 +20,7 @@ private:
 	int32 mask;
 	int32 size;
 	int32 buff_size = sizeof(int32);
-	int32 *hashtable;
+	int32 *hashtable = nullptr;
 
 	void rehash(int32 **_table) {
 		int32 oldcapacity = capacity;
@@ -82,18 +82,21 @@ private:
 		insert(u, _table);
 	}
 
-	int32 hash1(const int32 &x) { return x & mask;}
-	int32 hash2(const int32 &x) { return ~x & mask;}
+	int32 hash1(const int32 x) { return x & mask;}
+	int32 hash2(const int32 x) { return ~x & mask;}
 
 public:
 	CuckooHash(/* args */) {
 		capacity = 0;
-		hashtable = NULL;
+		hashtable = nullptr;
 		mask = 0;
 		size = 0;
 	}
 	~CuckooHash() {
-		if (hashtable) delete[] hashtable;
+		if (hashtable != nullptr) {
+			delete[] hashtable;
+			hashtable = nullptr;
+		}
 	}
 
 	void reserve(int32 _size) {
@@ -101,7 +104,10 @@ public:
 		mask = mask == 0 ? 1 : ((mask << 1) | 1);
 		while (_size >= mask * buff_size) mask = (mask << 1) | 1;
 		capacity = (mask + 1) * buff_size;
-		if (hashtable) delete[] hashtable;
+		if (hashtable != nullptr) {
+			delete[] hashtable;
+			hashtable = nullptr;
+		}
 		hashtable = new int32[capacity];
 		memset(hashtable, unfilled, sizeof(int32) * capacity);
 	}
@@ -113,10 +119,12 @@ public:
 	}
 
 	bool find(const int32 &_u) {
+
 		int32 hs1 = hash1(_u);
+
 		int32 hs2 = hash2(_u);
 
-		assert(buff_size == 4 && sizeof (int32) == 4);
+		// assert(buff_size == 4 && sizeof (int32) == 4);
 		__m128i cmp = _mm_set1_epi32(_u);
 		__m128i b1 = _mm_load_si128((__m128i*)&hashtable[buff_size * hs1]);
 		__m128i b2 = _mm_load_si128((__m128i*)&hashtable[buff_size * hs2]);
@@ -136,7 +144,7 @@ public:
     std::vector<ui> pIdx, pIdx2, pEdge;
     std::vector<std::vector<ui>> pDeepIdx;
     std::vector<std::vector<ui>> deg;
-    std::vector<P> edges;
+    std::vector<Pair> edges;
     ui coreNumber;
 
     Graph() {}

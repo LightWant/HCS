@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmaximalSDC.a CMakeFiles/maximalSDC.dir/maximalSDC.cpp.o
+/usr/bin/ranlib libmaximalSDC.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkpivoter.a CMakeFiles/kpivoter.dir/kpivoterSGClique.cpp.o
+/usr/bin/ranlib libkpivoter.a

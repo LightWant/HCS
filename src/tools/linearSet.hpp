@@ -8,8 +8,8 @@
 
 class LinearSet {
 private:
-    uint32_t * vSet;
-    uint32_t * fIndex;
+    uint32_t * vSet = nullptr;
+    uint32_t * fIndex = nullptr;
     uint32_t sz;
 
 public:
@@ -26,7 +26,12 @@ public:
         }
     }
 
-    ~LinearSet() { delete [] fIndex; delete [] vSet; }
+    ~LinearSet() {
+        if(fIndex != nullptr) {
+            delete [] fIndex; delete [] vSet; 
+        } 
+    }
+
     uint32_t * begin() {
         return vSet;
     }

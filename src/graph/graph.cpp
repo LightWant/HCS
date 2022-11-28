@@ -20,7 +20,7 @@ void Graph::readFromTextDoubleEdges(const std::string & fPath) {
         in.getUInt(v);
 // std::cout << u << ' ' << v << std::endl;
 
-        edges.push_back(P{u, v});
+        edges.push_back(Pair{u, v});
     }
     pEdge.resize(m);
     pIdx.resize(n + 1);
@@ -81,7 +81,7 @@ void Graph::readFromText(const std::string & fPath, bool noUVM) {
         minV = std::min(minV, u);
         minV = std::min(minV, v);
 
-        edges.push_back(P{u, v});
+        edges.push_back(Pair{u, v});
 
     };
 
@@ -157,7 +157,7 @@ printf("edges %u\n", m);fflush(stdout);
         in.getUInt(u);
         in.getUInt(v);
 
-        edges.push_back(P{u, v});
+        edges.push_back(Pair{u, v});
     }
     
     pEdge.resize(m);
