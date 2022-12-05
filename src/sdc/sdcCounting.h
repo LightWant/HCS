@@ -12,15 +12,20 @@ class sdcCounting
 private:
     Graph g, sg;
     ui s = 0, q = 0;
-    LinearSet C, X;
+    std::vector<std::vector<ui>> nodes;
     std::vector<ui> P;
     std::vector<ui> neiInP;
-    double answer = 0;
+    std::vector<ui> level;
+    std::vector<double> answers;
+
+private:
+    void listing(ui deep, ui missedEdges);
+    void pivoter(ui deep, ui p, ui h);
 
 private://combinatorial number
     const ui maxSize = 1000;
     double ** CN, *bf3;
-    ui maxD = maxSize*10, maxD2 = maxSize;
+    ui maxD = maxSize, maxD2 = maxSize;
     void computeC() {
         CN = new double*[maxD];
         bf3 = new double[maxD2 * maxD];
@@ -39,12 +44,35 @@ private://combinatorial number
         }
     }
 
+private:
+    ui * memBuffer = nullptr;
+    ui * pointerBuffer = nullptr;
+    void initBuffer(ui n) {
+        memBuffer = new ui[n];
+        pointerBuffer = memBuffer;
+    }
+    ui * allocMem(ui n) {
+        ui * tmp = pointerBuffer;
+        pointerBuffer += n;
+        return tmp;
+    }
+
+    ui * getNowAddress() {
+        return pointerBuffer;
+    }
+    ui expandMemory(ui n) {
+        pointerBuffer += n;
+    }
+    
+    void freeMem(ui n) {
+        pointerBuffer -= n;
+    }
 
 public:
     sdcCounting(Graph && g, ui s, ui q);
     ~sdcCounting();
 
-    double run();
+    std::vector<double>  run();
 };
 
 

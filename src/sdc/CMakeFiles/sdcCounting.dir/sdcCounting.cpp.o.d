@@ -1,6 +1,6 @@
-src/sdc/CMakeFiles/kDList.dir/kDList.cpp.o: \
- /home/yexw/maximalKPlex/src/sdc/kDList.cpp /usr/include/stdc-predef.h \
- /home/yexw/maximalKPlex/src/sdc/kDList.h \
+src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o: \
+ /home/yexw/maximalKPlex/src/sdc/sdcCounting.cpp \
+ /usr/include/stdc-predef.h /home/yexw/maximalKPlex/src/sdc/sdcCounting.h \
  /home/yexw/maximalKPlex/src/sdc/../graph/graph.h \
  /home/yexw/maximalKPlex/src/sdc/../graph/../tools/types.hpp \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/cstdint \
@@ -175,6 +175,12 @@ src/sdc/CMakeFiles/kDList.dir/kDList.cpp.o: \
  /opt/rh/devtoolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include/pkuintrin.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/cstring \
  /usr/include/string.h /home/yexw/maximalKPlex/src/sdc/../tools/types.hpp \
+ /home/yexw/maximalKPlex/src/sdc/../tools/linearSet.hpp \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/tuple \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/array \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/stdexcept \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/uses_allocator.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/invoke.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/cassert \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/queue \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/deque \
@@ -182,10 +188,31 @@ src/sdc/CMakeFiles/kDList.dir/kDList.cpp.o: \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/deque.tcc \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_heap.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_queue.h \
- /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/uses_allocator.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/algorithm \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_algo.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/algorithmfwd.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_tempbuf.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/uniform_int_dist.h \
- /opt/rh/devtoolset-9/root/usr/include/c++/9/limits
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/limits \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/iostream \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/ostream \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/ios \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/ios_base.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/locale_classes.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/locale_classes.tcc \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/system_error \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/x86_64-redhat-linux/bits/error_constants.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/streambuf \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/streambuf.tcc \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/basic_ios.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/locale_facets.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/cwctype \
+ /usr/include/wctype.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/x86_64-redhat-linux/bits/ctype_base.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/streambuf_iterator.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/x86_64-redhat-linux/bits/ctype_inline.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/locale_facets.tcc \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/basic_ios.tcc \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/ostream.tcc \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/istream \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/istream.tcc

@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <utility>
 
-#define BASELINE
-#define DDEBUG
+// #define BASELINE
+// #define DDEBUG
 
 #ifdef DDEBUG
 #include <iostream>

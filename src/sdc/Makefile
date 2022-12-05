@@ -144,6 +144,20 @@ kDList/fast:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/kDList.dir/build.make src/sdc/CMakeFiles/kDList.dir/build
 .PHONY : kDList/fast
 
+# Convenience name for target.
+src/sdc/CMakeFiles/sdcCounting.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/sdc/CMakeFiles/sdcCounting.dir/rule
+.PHONY : src/sdc/CMakeFiles/sdcCounting.dir/rule
+
+# Convenience name for target.
+sdcCounting: src/sdc/CMakeFiles/sdcCounting.dir/rule
+.PHONY : sdcCounting
+
+# fast build rule for target.
+sdcCounting/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/build
+.PHONY : sdcCounting/fast
+
 kDList.o: kDList.cpp.o
 .PHONY : kDList.o
 
@@ -192,6 +206,30 @@ maximalSDC.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/maximalSDC.dir/build.make src/sdc/CMakeFiles/maximalSDC.dir/maximalSDC.cpp.s
 .PHONY : maximalSDC.cpp.s
 
+sdcCounting.o: sdcCounting.cpp.o
+.PHONY : sdcCounting.o
+
+# target to build an object file
+sdcCounting.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o
+.PHONY : sdcCounting.cpp.o
+
+sdcCounting.i: sdcCounting.cpp.i
+.PHONY : sdcCounting.i
+
+# target to preprocess a source file
+sdcCounting.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.i
+.PHONY : sdcCounting.cpp.i
+
+sdcCounting.s: sdcCounting.cpp.s
+.PHONY : sdcCounting.s
+
+# target to generate assembly for a file
+sdcCounting.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.s
+.PHONY : sdcCounting.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -202,12 +240,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... kDList"
 	@echo "... maximalSDC"
+	@echo "... sdcCounting"
 	@echo "... kDList.o"
 	@echo "... kDList.i"
 	@echo "... kDList.s"
 	@echo "... maximalSDC.o"
 	@echo "... maximalSDC.i"
 	@echo "... maximalSDC.s"
+	@echo "... sdcCounting.o"
+	@echo "... sdcCounting.i"
+	@echo "... sdcCounting.s"
 .PHONY : help
 
 

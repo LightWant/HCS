@@ -9,7 +9,6 @@
 
 #include <iostream>
 
-
 ui maxD = 0;
 ui maxC = 0;
 std::vector<double> sdcCounting::run() {
@@ -349,5 +348,6 @@ sdcCounting::sdcCounting(Graph && g, ui s, ui q):g(g), s(s), q(q) {
 sdcCounting::~sdcCounting() {
     delete [] bf3;
     delete [] CN;
+    delete [] memBuffer;
 }
 

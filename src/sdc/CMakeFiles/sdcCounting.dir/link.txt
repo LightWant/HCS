@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsdcCounting.a CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o
+/usr/bin/ranlib libsdcCounting.a
