@@ -1,2 +1,2 @@
-/usr/bin/ar qc libd2k.a CMakeFiles/d2k.dir/d2kng.cpp.o
-/usr/bin/ranlib libd2k.a
+/opt/rh/devtoolset-9/root/usr/bin/ar qc libd2k.a CMakeFiles/d2k.dir/d2kng.cpp.o
+/opt/rh/devtoolset-9/root/usr/bin/ranlib libd2k.a

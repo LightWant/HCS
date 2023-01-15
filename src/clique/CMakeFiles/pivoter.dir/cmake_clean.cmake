@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o"
-  "CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o.d"
+  "CMakeFiles/pivoter.dir/pivoterSG.cpp.o"
+  "CMakeFiles/pivoter.dir/pivoterSG.cpp.o.d"
   "libpivoter.a"
   "libpivoter.pdb"
 )

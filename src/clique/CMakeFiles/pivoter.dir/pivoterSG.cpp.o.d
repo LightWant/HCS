@@ -182,4 +182,17 @@ src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o: \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/stdexcept \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/uses_allocator.h \
  /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/invoke.h \
- /opt/rh/devtoolset-9/root/usr/include/c++/9/cassert
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/cassert \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/algorithm \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_algo.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/algorithmfwd.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_heap.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_tempbuf.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/uniform_int_dist.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/limits \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/set \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_tree.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/ext/aligned_buffer.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_set.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/stl_multiset.h \
+ /opt/rh/devtoolset-9/root/usr/include/c++/9/bits/erase_if.h

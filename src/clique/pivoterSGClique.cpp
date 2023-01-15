@@ -4,10 +4,12 @@
 // #define DDEBUG
 // #define DEBUG
 // #define BASELINE
-#define BRANCHES
+// #define BRANCHES
 
 #ifdef BRANCHES
 ui branches = 0;
+ui PNODES = 0, HNODES = 0;
+ui cntPQ[500][500];
 #endif
 
 #ifdef DDEBUG
@@ -184,6 +186,13 @@ for(ui u = 0; u < g.n; u++) printf("u_cntu %u %u\n", u, vc[u]);
 #endif
 #ifdef BRANCHES
 printf("branches:%u\n", branches);
+printf("hNodes:%u\npNodes:%u\n", HNODES, PNODES);
+for(ui i = 0; i < g.coreNumber; i++) {
+    for(ui j = 0; j < g.coreNumber; j++) {
+        printf("%u ", cntPQ[i][j]);
+    }
+    printf("\n");
+}
 #endif
     return answers;
 }
@@ -207,6 +216,11 @@ printf("%u ", clique[i]);
     if(h >= maxK) return;
 
     auto updateAns = [&]() {
+#ifdef BRANCHES
+cntPQ[p][edClique]++;
+return;
+#endif
+
 #ifdef DDEBUG
 if(uu == uuu) {
 printf("\n In updateAns\n");
@@ -334,7 +348,7 @@ buildSC4(edClique, clique);
         for(ui i = 2; i < maxK && i <= pL + pR; i++) 
             ansBiclique[i] = 0;
         limitOfPQ = maxK-1;
-        pivotCount(0, pL, pR, {0,0,0,0});//biclique counting
+        // pivotCount(0, pL, pR, {0,0,0,0});//biclique counting
 
         for(ui i = 2; i + h < maxK && i <= pL + pR; i++) {
 #ifdef DDEBUG
@@ -478,6 +492,9 @@ printf("cand is a clique\n");
     };
     updateSG();
 
+#ifdef BRANCHES
+PNODES++;
+#endif
     Ps.push_back(pivot);
     searchSGClique(deep + 1, p + 1, h, edClique);
     Ps.pop_back();
@@ -522,6 +539,9 @@ printf("%u ", C[i]);
             }
             else j++;
         }
+#ifdef BRANCHES
+HNODES++;
+#endif
         searchSGClique(deep + 1, p, h + 1, newEdClique);
         Hs.pop_back();
 

@@ -39,14 +39,14 @@ struct nonNeiMatainer{
 class plexCounting {
 private:
     Graph g, sg;
-    ui k = 0, q = 0;
+    ui k = 0, q = 0, Q = 20;
     LinearSet C, P;
     nonNeiMatainer nn;//non-neighbors
-    std::vector<ull> answers;
+    std::vector<double> answers;
 
 private://combinatorial number
     const ui maxSize = 1000;
-    double ** CN, *bf3;
+    double ** CN = nullptr, *bf3 = nullptr;
     ui maxD = maxSize*10, maxD2 = maxSize;
     void computeC() {
         CN = new double*[maxD];
@@ -76,15 +76,18 @@ private://the prune technique of dai
     std::vector<std::vector<ui>> bucket;
     std::vector<ui> support;
 
-private:
-    private://nadj
+private://nadj
     std::vector<std::vector<ui>> nadj;
 
 private:
     void bkPivot(ui deep, ui edC, ui edP, ui p, ui h);
 
+private: //v5, dp
+    std::vector<ui> Pnon, Pr, H;
+    std::vector<double> dp;
+
 public:
-    plexCounting(Graph && g, ui k, ui q):g(g), k(k), q(q) { 
+    plexCounting(Graph && g, ui k, ui q, ui Q = 20):g(g), k(k), q(q), Q(Q) { 
         C.resize(g.n);
         P.resize(g.n);
 
@@ -100,18 +103,21 @@ public:
         bucket.resize(k);
         support.resize(g.n);
 
-        answers.resize(maxSize, 0);
+        answers.resize(Q+1, 0);
 
         computeC();
 
         printf("plexCounting\n");
     }
     ~plexCounting() {
-        delete [] bf3;
-        delete [] CN;
+        if(bf3 == nullptr) {
+            delete [] bf3;
+            delete [] CN;
+            bf3 = nullptr;
+        }
     }
 
-    std::vector<ull> run();
+    std::vector<double> run();
 };
 
 #endif

@@ -124,8 +124,12 @@ public:
 
 		int32 hs2 = hash2(_u);
 
-		// assert(buff_size == 4 && sizeof (int32) == 4);
+// assert(buff_size == 4 && sizeof (int32) == 4);
 		__m128i cmp = _mm_set1_epi32(_u);
+// if(buff_size*hs1 >= capacity) {
+// 	printf("hs1 %d, cap %d\n", hs1, capacity);fflush(stdout);
+// }
+// assert(buff_size*hs1 < capacity);
 		__m128i b1 = _mm_load_si128((__m128i*)&hashtable[buff_size * hs1]);
 		__m128i b2 = _mm_load_si128((__m128i*)&hashtable[buff_size * hs2]);
 		__m128i flag = _mm_or_si128(_mm_cmpeq_epi32(cmp, b1), _mm_cmpeq_epi32(cmp, b2));
@@ -146,6 +150,9 @@ public:
     std::vector<std::vector<ui>> deg;
     std::vector<Pair> edges;
     ui coreNumber;
+
+//mp[i] = v; mp2[v] = i;
+	std::vector<ui> mp, mp2;
 
     Graph() {}
     void readFromText(const std::string & fPath, bool noUVM = false);
@@ -187,7 +194,9 @@ public:
 private://hash
     std::vector<CuckooHash> cuhash;
 public:
-    bool connectHash(ui u, ui v) {return cuhash[u].find(v);}
+    bool connectHash(ui u, ui v) {
+		return cuhash[u].find(v);
+	}
     void initHash() {
         cuhash.resize(n);
         for(ui u = 0; u < n; u++) {

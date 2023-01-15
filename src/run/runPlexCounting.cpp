@@ -49,9 +49,11 @@ int main(int argc, char * argv[])
 
     int k = std::atoi(ac["-k"].c_str());
     int q = std::atoi(ac["-q"].c_str());
-    std::cout << "k:" << k << " q:" << q << std::endl;
+    int Q = 20;
+    if(ac.exist("-Q")) Q = std::stoi(ac["-Q"]);
+    std::cout << "k:" << k << " q:" << q << " Q:" << Q << std::endl;
 
-    plexCounting pC(std::move(g), k, q);
+    plexCounting pC(std::move(g), k, q, Q);
 
     auto t1 = std::chrono::steady_clock::now();
     

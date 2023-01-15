@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o"
-  "CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o.d"
+  "CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.o"
+  "CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.o.d"
   "libsdcCounting.a"
   "libsdcCounting.pdb"
 )

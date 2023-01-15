@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/yexw/maximalKPlex/src/clique/pivoterSGClique.cpp" "src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o" "gcc" "src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o.d"
+  "/home/yexw/maximalKPlex/src/clique/pivoterSG.cpp" "src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o" "gcc" "src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o.d"
   )
 
 # Targets to which this target links.

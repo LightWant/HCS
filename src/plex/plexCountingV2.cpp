@@ -245,15 +245,25 @@ printf("\n");
     //is P+C a k-plex, minDPC is the min degree in P+C
     ui minDPC = sg.deg[deep][C[0]] + edP - nn.getCntNonNei(C[0]);
     //find pivot in C with max degree in C
-    ui maxD = sg.deg[deep][C[0]], pv = C[0];
+    ui maxD = sg.deg[deep][C[0]], pv = C[0], nonNeiOfPv = nn.getCntNonNei(C[0]);
     for(ui i = 1; i < edC; i++) {
         ui v = C[i];
         ui d = sg.degreeDeep(deep, v);
+        ui nonNei = nn.getCntNonNei(v);
         
-        minDPC = std::min(minDPC, d + edP - nn.getCntNonNei(v));
+        minDPC = std::min(minDPC, d + edP - nonNei);
+
+        if(nonNeiOfPv == 0) {
+            if(nonNei == 0 && d > maxD) {
+                maxD = d;
+                pv = v;
+            }
+        }
+        else 
         if(d > maxD) {
             maxD = d;
             pv = v;
+nonNeiOfPv = nonNei;
         }
     }
 

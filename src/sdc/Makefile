@@ -158,6 +158,20 @@ sdcCounting/fast:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/build
 .PHONY : sdcCounting/fast
 
+# Convenience name for target.
+src/sdc/CMakeFiles/sdcCountingDP.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/sdc/CMakeFiles/sdcCountingDP.dir/rule
+.PHONY : src/sdc/CMakeFiles/sdcCountingDP.dir/rule
+
+# Convenience name for target.
+sdcCountingDP: src/sdc/CMakeFiles/sdcCountingDP.dir/rule
+.PHONY : sdcCountingDP
+
+# fast build rule for target.
+sdcCountingDP/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/build
+.PHONY : sdcCountingDP/fast
+
 kDList.o: kDList.cpp.o
 .PHONY : kDList.o
 
@@ -206,29 +220,53 @@ maximalSDC.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/maximalSDC.dir/build.make src/sdc/CMakeFiles/maximalSDC.dir/maximalSDC.cpp.s
 .PHONY : maximalSDC.cpp.s
 
-sdcCounting.o: sdcCounting.cpp.o
-.PHONY : sdcCounting.o
+sdcCounting2.o: sdcCounting2.cpp.o
+.PHONY : sdcCounting2.o
 
 # target to build an object file
-sdcCounting.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o
-.PHONY : sdcCounting.cpp.o
+sdcCounting2.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.o
+.PHONY : sdcCounting2.cpp.o
 
-sdcCounting.i: sdcCounting.cpp.i
-.PHONY : sdcCounting.i
+sdcCounting2.i: sdcCounting2.cpp.i
+.PHONY : sdcCounting2.i
 
 # target to preprocess a source file
-sdcCounting.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.i
-.PHONY : sdcCounting.cpp.i
+sdcCounting2.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.i
+.PHONY : sdcCounting2.cpp.i
 
-sdcCounting.s: sdcCounting.cpp.s
-.PHONY : sdcCounting.s
+sdcCounting2.s: sdcCounting2.cpp.s
+.PHONY : sdcCounting2.s
 
 # target to generate assembly for a file
-sdcCounting.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting.cpp.s
-.PHONY : sdcCounting.cpp.s
+sdcCounting2.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.s
+.PHONY : sdcCounting2.cpp.s
+
+sdcCounting2DP.o: sdcCounting2DP.cpp.o
+.PHONY : sdcCounting2DP.o
+
+# target to build an object file
+sdcCounting2DP.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o
+.PHONY : sdcCounting2DP.cpp.o
+
+sdcCounting2DP.i: sdcCounting2DP.cpp.i
+.PHONY : sdcCounting2DP.i
+
+# target to preprocess a source file
+sdcCounting2DP.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.i
+.PHONY : sdcCounting2DP.cpp.i
+
+sdcCounting2DP.s: sdcCounting2DP.cpp.s
+.PHONY : sdcCounting2DP.s
+
+# target to generate assembly for a file
+sdcCounting2DP.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.s
+.PHONY : sdcCounting2DP.cpp.s
 
 # Help Target
 help:
@@ -241,15 +279,19 @@ help:
 	@echo "... kDList"
 	@echo "... maximalSDC"
 	@echo "... sdcCounting"
+	@echo "... sdcCountingDP"
 	@echo "... kDList.o"
 	@echo "... kDList.i"
 	@echo "... kDList.s"
 	@echo "... maximalSDC.o"
 	@echo "... maximalSDC.i"
 	@echo "... maximalSDC.s"
-	@echo "... sdcCounting.o"
-	@echo "... sdcCounting.i"
-	@echo "... sdcCounting.s"
+	@echo "... sdcCounting2.o"
+	@echo "... sdcCounting2.i"
+	@echo "... sdcCounting2.s"
+	@echo "... sdcCounting2DP.o"
+	@echo "... sdcCounting2DP.i"
+	@echo "... sdcCounting2DP.s"
 .PHONY : help
 
 

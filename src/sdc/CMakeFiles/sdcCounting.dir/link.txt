@@ -1,2 +1,2 @@
-/usr/bin/ar qc libsdcCounting.a CMakeFiles/sdcCounting.dir/sdcCounting.cpp.o
-/usr/bin/ranlib libsdcCounting.a
+/opt/rh/devtoolset-9/root/usr/bin/ar qc libsdcCounting.a CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.o
+/opt/rh/devtoolset-9/root/usr/bin/ranlib libsdcCounting.a

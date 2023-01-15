@@ -203,7 +203,7 @@ printf("    edC == 0\n");
 #ifdef DDDEBUG
 printf("    P is ans!\n");
 #endif
-            for(ui i = std::max(q, h); i <= p + h && i < maxSize; i++) {
+            for(ui i = std::max(q, h); i <= p + h && i <= Q; i++) {
                 answers[i] += CN[p][i - h];
             }
         }
@@ -211,6 +211,10 @@ printf("    P is ans!\n");
     }
 
     if(p + h + edC < q) return;
+    if(h == Q) {
+        answers[Q] += 1;
+        return;
+    }
 
     //init deg from the pre level
     if(sg.deg[deep].size() == 0) sg.deg[deep].resize(g.n);
@@ -248,14 +252,25 @@ printf("\n");
     ui minDPC = sg.deg[deep][C[0]] + edP - nn.getCntNonNei(C[0]);
     //find pivot in C with max degree in C
     ui maxD = sg.deg[deep][C[0]], pv = C[0];
+ui nonNeiOfPv = nn.getCntNonNei(C[0]);
     for(ui i = 1; i < edC; i++) {
         ui v = C[i];
         ui d = sg.degreeDeep(deep, v);
         
         minDPC = std::min(minDPC, d + edP - nn.getCntNonNei(v));
+ui nonNei = nn.getCntNonNei(v);
+
+if(nonNeiOfPv == 0) {
+    if(nonNei == 0 && d > maxD) {
+        maxD = d;
+        pv = v;
+    }
+}
+else 
         if(d > maxD) {
             maxD = d;
             pv = v;
+nonNeiOfPv = nonNei;
         }
     }
 
@@ -412,7 +427,7 @@ for(ui i = 0; i < candSize; i++) printf("%u ", cand[i]);printf("\n");
         P.changeTo(pv, --edP);
     };
 
-    if(C2Size == 0) {
+    if(C2Size == 0) {//没有公共非邻居
 #ifdef DDDEBUG
 printf("    deep %u-%u, C2=0\n", deep, pv);
 #endif   
@@ -431,10 +446,11 @@ printf("    deep %u-%u, C2>0\n", deep, pv);
 #ifdef C1C2
 c2++;
 #endif 
+//和pv没有公共非邻居的点，不用枚举
         P.changeTo(pv, edP++);
         bkPivot(deep + 1, C1Size, edP, p, h);
         P.changeTo(pv, --edP);
-
+//正常枚举所有包含pv的，然后删除pv
         ui newEdC = solvePre(pv);
         bkPivot(deep + 1, newEdC, edP, p, h + 1);
         solveBack(pv, newEdC);

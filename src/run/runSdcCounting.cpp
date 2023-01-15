@@ -1,6 +1,6 @@
 #include "../graph/graph.h"
 #include "../tools/getArgs.hpp"
-#include "../sdc/sdcCounting.h"
+#include "../sdc/sdcCounting2DP.h"
 #include <iostream>
 #include <chrono>
 #include <iomanip>
@@ -51,9 +51,11 @@ int main(int argc, char * argv[])
 
     int s = std::atoi(ac["-s"].c_str());
     int q = std::atoi(ac["-q"].c_str());
-    std::cout << "k:" << s << " q:" << q << std::endl;
+    int Q = 20;
+    if(ac.exist("-Q")) Q = std::stoi(ac["-Q"]);
+    std::cout << "k:" << s << " q:" << q << " Q:" << Q << std::endl;
 
-    sdcCounting pS(std::move(g), s, q);
+    sdcCounting pS(std::move(g), s, q, Q);
 
     auto t1 = std::chrono::steady_clock::now();
     
@@ -63,10 +65,10 @@ int main(int argc, char * argv[])
     auto durationt = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1);
     std::cout << "time:" << durationt.count() << "ms" << std::endl;
 
-    for(ui s = q; s < cnt.size(); s++) {
-        if(cnt[s] <= 0.5) break;
+    for(ui i = q; i < cnt.size(); i++) {
+        if(cnt[i] <= 0.5) break;
         std::cout << std::fixed << std::setprecision(0) <<
-             s << "-sdc:" << cnt[s] << std::endl;
+             i << "-sdc:" << cnt[i] << std::endl;
     }
     return 0;
 }

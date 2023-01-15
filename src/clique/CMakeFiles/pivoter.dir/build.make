@@ -69,28 +69,28 @@ include src/clique/CMakeFiles/pivoter.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/clique/CMakeFiles/pivoter.dir/flags.make
 
-src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o: src/clique/CMakeFiles/pivoter.dir/flags.make
-src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o: src/clique/pivoterSGClique.cpp
-src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o: src/clique/CMakeFiles/pivoter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o"
-	cd /home/yexw/maximalKPlex/src/clique && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o -MF CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o.d -o CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o -c /home/yexw/maximalKPlex/src/clique/pivoterSGClique.cpp
+src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o: src/clique/CMakeFiles/pivoter.dir/flags.make
+src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o: src/clique/pivoterSG.cpp
+src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o: src/clique/CMakeFiles/pivoter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o"
+	cd /home/yexw/maximalKPlex/src/clique && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o -MF CMakeFiles/pivoter.dir/pivoterSG.cpp.o.d -o CMakeFiles/pivoter.dir/pivoterSG.cpp.o -c /home/yexw/maximalKPlex/src/clique/pivoterSG.cpp
 
-src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pivoter.dir/pivoterSGClique.cpp.i"
-	cd /home/yexw/maximalKPlex/src/clique && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yexw/maximalKPlex/src/clique/pivoterSGClique.cpp > CMakeFiles/pivoter.dir/pivoterSGClique.cpp.i
+src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pivoter.dir/pivoterSG.cpp.i"
+	cd /home/yexw/maximalKPlex/src/clique && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yexw/maximalKPlex/src/clique/pivoterSG.cpp > CMakeFiles/pivoter.dir/pivoterSG.cpp.i
 
-src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pivoter.dir/pivoterSGClique.cpp.s"
-	cd /home/yexw/maximalKPlex/src/clique && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yexw/maximalKPlex/src/clique/pivoterSGClique.cpp -o CMakeFiles/pivoter.dir/pivoterSGClique.cpp.s
+src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pivoter.dir/pivoterSG.cpp.s"
+	cd /home/yexw/maximalKPlex/src/clique && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yexw/maximalKPlex/src/clique/pivoterSG.cpp -o CMakeFiles/pivoter.dir/pivoterSG.cpp.s
 
 # Object files for target pivoter
 pivoter_OBJECTS = \
-"CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o"
+"CMakeFiles/pivoter.dir/pivoterSG.cpp.o"
 
 # External object files for target pivoter
 pivoter_EXTERNAL_OBJECTS =
 
-src/clique/libpivoter.a: src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o
+src/clique/libpivoter.a: src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o
 src/clique/libpivoter.a: src/clique/CMakeFiles/pivoter.dir/build.make
 src/clique/libpivoter.a: src/clique/CMakeFiles/pivoter.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpivoter.a"

@@ -11,7 +11,7 @@ constexpr int PAGESIZE = 1024*10000;
 
 class fastIO {
 private:
-    char *buffer, *S = nullptr, *T = nullptr;
+    char *buffer = nullptr, *S = nullptr, *T = nullptr;
     FILE * f;
 	long bytes = 0;
     int sz;
@@ -42,7 +42,10 @@ public:
 
     ~fastIO() {
         fclose(f);
-        delete [] buffer;
+        if(buffer != nullptr) {
+            delete [] buffer;
+            buffer = nullptr;
+        }
     }
 
     char getChar()  

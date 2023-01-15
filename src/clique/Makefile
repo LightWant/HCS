@@ -158,6 +158,58 @@ kCListClique/fast:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kCListClique.dir/build.make src/clique/CMakeFiles/kCListClique.dir/build
 .PHONY : kCListClique/fast
 
+# Convenience name for target.
+src/clique/CMakeFiles/kccPivot.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clique/CMakeFiles/kccPivot.dir/rule
+.PHONY : src/clique/CMakeFiles/kccPivot.dir/rule
+
+# Convenience name for target.
+kccPivot: src/clique/CMakeFiles/kccPivot.dir/rule
+.PHONY : kccPivot
+
+# fast build rule for target.
+kccPivot/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/build
+.PHONY : kccPivot/fast
+
+# Convenience name for target.
+src/clique/CMakeFiles/kccPlusPivoter.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clique/CMakeFiles/kccPlusPivoter.dir/rule
+.PHONY : src/clique/CMakeFiles/kccPlusPivoter.dir/rule
+
+# Convenience name for target.
+kccPlusPivoter: src/clique/CMakeFiles/kccPlusPivoter.dir/rule
+.PHONY : kccPlusPivoter
+
+# fast build rule for target.
+kccPlusPivoter/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPlusPivoter.dir/build.make src/clique/CMakeFiles/kccPlusPivoter.dir/build
+.PHONY : kccPlusPivoter/fast
+
+MCEGO.o: MCEGO.cpp.o
+.PHONY : MCEGO.o
+
+# target to build an object file
+MCEGO.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/MCEGO.cpp.o
+.PHONY : MCEGO.cpp.o
+
+MCEGO.i: MCEGO.cpp.i
+.PHONY : MCEGO.i
+
+# target to preprocess a source file
+MCEGO.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/MCEGO.cpp.i
+.PHONY : MCEGO.cpp.i
+
+MCEGO.s: MCEGO.cpp.s
+.PHONY : MCEGO.s
+
+# target to generate assembly for a file
+MCEGO.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/MCEGO.cpp.s
+.PHONY : MCEGO.cpp.s
+
 kCListClique.o: kCListClique.cpp.o
 .PHONY : kCListClique.o
 
@@ -181,6 +233,54 @@ kCListClique.s: kCListClique.cpp.s
 kCListClique.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kCListClique.dir/build.make src/clique/CMakeFiles/kCListClique.dir/kCListClique.cpp.s
 .PHONY : kCListClique.cpp.s
+
+kccPivot.o: kccPivot.cpp.o
+.PHONY : kccPivot.o
+
+# target to build an object file
+kccPivot.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/kccPivot.cpp.o
+.PHONY : kccPivot.cpp.o
+
+kccPivot.i: kccPivot.cpp.i
+.PHONY : kccPivot.i
+
+# target to preprocess a source file
+kccPivot.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/kccPivot.cpp.i
+.PHONY : kccPivot.cpp.i
+
+kccPivot.s: kccPivot.cpp.s
+.PHONY : kccPivot.s
+
+# target to generate assembly for a file
+kccPivot.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPivot.dir/build.make src/clique/CMakeFiles/kccPivot.dir/kccPivot.cpp.s
+.PHONY : kccPivot.cpp.s
+
+kccPlusPivoter.o: kccPlusPivoter.cpp.o
+.PHONY : kccPlusPivoter.o
+
+# target to build an object file
+kccPlusPivoter.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPlusPivoter.dir/build.make src/clique/CMakeFiles/kccPlusPivoter.dir/kccPlusPivoter.cpp.o
+.PHONY : kccPlusPivoter.cpp.o
+
+kccPlusPivoter.i: kccPlusPivoter.cpp.i
+.PHONY : kccPlusPivoter.i
+
+# target to preprocess a source file
+kccPlusPivoter.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPlusPivoter.dir/build.make src/clique/CMakeFiles/kccPlusPivoter.dir/kccPlusPivoter.cpp.i
+.PHONY : kccPlusPivoter.cpp.i
+
+kccPlusPivoter.s: kccPlusPivoter.cpp.s
+.PHONY : kccPlusPivoter.s
+
+# target to generate assembly for a file
+kccPlusPivoter.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kccPlusPivoter.dir/build.make src/clique/CMakeFiles/kccPlusPivoter.dir/kccPlusPivoter.cpp.s
+.PHONY : kccPlusPivoter.cpp.s
 
 kpivoterSGClique.o: kpivoterSGClique.cpp.o
 .PHONY : kpivoterSGClique.o
@@ -206,29 +306,29 @@ kpivoterSGClique.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/kpivoter.dir/build.make src/clique/CMakeFiles/kpivoter.dir/kpivoterSGClique.cpp.s
 .PHONY : kpivoterSGClique.cpp.s
 
-pivoterSGClique.o: pivoterSGClique.cpp.o
-.PHONY : pivoterSGClique.o
+pivoterSG.o: pivoterSG.cpp.o
+.PHONY : pivoterSG.o
 
 # target to build an object file
-pivoterSGClique.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/pivoter.dir/build.make src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.o
-.PHONY : pivoterSGClique.cpp.o
+pivoterSG.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/pivoter.dir/build.make src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.o
+.PHONY : pivoterSG.cpp.o
 
-pivoterSGClique.i: pivoterSGClique.cpp.i
-.PHONY : pivoterSGClique.i
+pivoterSG.i: pivoterSG.cpp.i
+.PHONY : pivoterSG.i
 
 # target to preprocess a source file
-pivoterSGClique.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/pivoter.dir/build.make src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.i
-.PHONY : pivoterSGClique.cpp.i
+pivoterSG.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/pivoter.dir/build.make src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.i
+.PHONY : pivoterSG.cpp.i
 
-pivoterSGClique.s: pivoterSGClique.cpp.s
-.PHONY : pivoterSGClique.s
+pivoterSG.s: pivoterSG.cpp.s
+.PHONY : pivoterSG.s
 
 # target to generate assembly for a file
-pivoterSGClique.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/pivoter.dir/build.make src/clique/CMakeFiles/pivoter.dir/pivoterSGClique.cpp.s
-.PHONY : pivoterSGClique.cpp.s
+pivoterSG.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/clique/CMakeFiles/pivoter.dir/build.make src/clique/CMakeFiles/pivoter.dir/pivoterSG.cpp.s
+.PHONY : pivoterSG.cpp.s
 
 # Help Target
 help:
@@ -239,17 +339,28 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... kCListClique"
+	@echo "... kccPivot"
+	@echo "... kccPlusPivoter"
 	@echo "... kpivoter"
 	@echo "... pivoter"
+	@echo "... MCEGO.o"
+	@echo "... MCEGO.i"
+	@echo "... MCEGO.s"
 	@echo "... kCListClique.o"
 	@echo "... kCListClique.i"
 	@echo "... kCListClique.s"
+	@echo "... kccPivot.o"
+	@echo "... kccPivot.i"
+	@echo "... kccPivot.s"
+	@echo "... kccPlusPivoter.o"
+	@echo "... kccPlusPivoter.i"
+	@echo "... kccPlusPivoter.s"
 	@echo "... kpivoterSGClique.o"
 	@echo "... kpivoterSGClique.i"
 	@echo "... kpivoterSGClique.s"
-	@echo "... pivoterSGClique.o"
-	@echo "... pivoterSGClique.i"
-	@echo "... pivoterSGClique.s"
+	@echo "... pivoterSG.o"
+	@echo "... pivoterSG.i"
+	@echo "... pivoterSG.s"
 .PHONY : help
 
 

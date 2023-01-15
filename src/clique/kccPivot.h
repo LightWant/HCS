@@ -4,6 +4,7 @@
 #include "../graph/graph.h"
 #include "../tools/types.hpp"
 #include "../tools/linearSet.hpp"
+#include <set>
 
 class kccPivot {
 private:
@@ -11,7 +12,14 @@ private:
     ui k = 0;
     double answer = 0;
     LinearSet C;
+    // std::vector<ui> P;
+    // std::vector<std::vector<ui>> preFixSize;
+    std::vector<ui> maxPreFixSize;
+    std::vector<std::vector<ui>> pClique;
+    using Pset = std::set<std::pair<ui, ui>>;
+    std::vector<Pset> Po;
     void listing(ui deep, ui st, ui ed, ui edClique, ui p, ui h);
+    void listing(ui deep, ui edC, ui p, ui h);
     void pivoter(ui deep, ui st, ui ed, ui p, ui h);
 
 private:
@@ -53,19 +61,13 @@ private:
         }
     }
 
+private://MC-EGO
+    ui maxiDeg(ui st, ui ed, ui xx=5);
+    ui coreClique(ui st, ui ed, ui cliqueSize);
+    ui MCEGO(ui st, ui ed);
+
 public:
-    kccPivot(Graph && g, ui k) :g(g), k(k) {
-        maxSize = g.coreNumber + 1;
-        maxK = k + 1;
-        answer = 0;
-        computeC();
-
-        initBuffer(g.coreNumber * (k+1));
-
-        C.resize(g.n);
-
-        printf("kccPivot.h\n");
-    }
+    kccPivot(Graph && g, ui k);
     ~kccPivot() { 
         if(bf3 != nullptr) {
             delete [] bf3; delete [] CN; 

@@ -29,6 +29,7 @@ public:
     ~LinearSet() {
         if(fIndex != nullptr) {
             delete [] fIndex; delete [] vSet; 
+            fIndex = nullptr;
         } 
     }
 

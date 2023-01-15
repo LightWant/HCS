@@ -229,8 +229,9 @@ void Graph::changeToCoreOrder() {
     }
     lheap.init(n, n, ids, keys);
 
-    ui * mp = ids; //v to v
-    ui * mp2 = new ui[n];
+    mp.resize(n);
+    mp2.resize(n);
+
     ui * pDIdx = keys;
     ui * pDEdge = new ui[m];
 
@@ -264,7 +265,7 @@ void Graph::changeToCoreOrder() {
     
     delete [] ids;
     delete [] keys;
-    delete [] mp2;
+    // delete [] mp2;
     delete [] pDEdge;
 
     pIdx2.resize(n);

@@ -60,7 +60,7 @@ private:
     ui * getNowAddress() {
         return pointerBuffer;
     }
-    ui expandMemory(ui n) {
+    void expandMemory(ui n) {
         pointerBuffer += n;
     }
     

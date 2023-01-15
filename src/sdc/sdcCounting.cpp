@@ -9,6 +9,9 @@
 
 #include <iostream>
 
+#ifdef DDEBUG
+ui uu = 0, uuu = 0;
+#endif
 
 ui maxD = 0;
 ui maxC = 0;
@@ -19,17 +22,29 @@ std::vector<double> sdcCounting::run() {
     printf("init Hash\n");fflush(stdout);
 
     using Pair = std::pair<ui, ui>;
-    std::queue<ui> que;
-
+    std::vector<ui> que(g.coreNumber * g.coreNumber);
+    ui lq, rq;
+    std::vector<bool> vis(g.n);
+#ifdef DDEBUG
+g.print();
+#endif
     for(ui u = 0; u < g.n; u++) {
         std::vector<ui> & C = nodes[0];
         C.clear();
+#ifdef DDEBUG
+uu = u;
+#endif
 // std::cout<<"    start "<<u<<' '<<answers[q]<<std::endl;
 #ifdef DDEBUG
 std::cout<<"    start "<<u<<' '<<answers[q]<<std::endl;
 #endif
         //reduction to q-s-2 core
         std::vector<ui> & deg = neiInP;
+        lq = rq = 0;
+// for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
+//     vis[g.pEdge[i]] = true;
+// }
+        // for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) deg[g.pEdge[i]] = 0;
         for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
             ui v = g.pEdge[i];
             for(ui j = i + 1; j < g.pIdx[u + 1]; j++) {
@@ -37,46 +52,79 @@ std::cout<<"    start "<<u<<' '<<answers[q]<<std::endl;
                 if(g.connectHash(v, w)) deg[v]++, deg[w]++;
             }
 
-            if(deg[v] < q-s-2) que.push(v);
+            if(deg[v] < q-s-2) {
+                que[rq++] = v;
+            }
         }
-        while(!que.empty()) {
-            ui v = que.front(); que.pop();
+        while(lq < rq) {
+            ui v = que[lq++];
 
             for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
                 ui w = g.pEdge[i];
                 if(!g.connectHash(v, w)) continue;
-                if((--deg[w]) == q-s-3) que.push(w);
+                if((--deg[w]) == q-s-3) que[rq++] = w;
             }
         }
         for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
             ui v = g.pEdge[i];
-            if(deg[v] >= q-s-2) C.push_back(v);
+
+            vis[v] = true;
+            if(deg[v] >= q-s-2) {
+                C.push_back(v);
+            }
             deg[v] = 0;
         }
-
+#ifdef DDEBUG
+printf("edC1 %u:", C.size());
+for(auto v : C) printf("%u ", v); printf("\n");
+#endif
+// assert(C.size() <= g.pIdx[u+1] - g.pIdx2[u]);
         //2-hop
         ui edC1 = C.size();
         for(ui i = 0; i < edC1; i++) {
             ui v = C[i];
-            for(ui j = g.pIdx[v]; j < g.pIdx[v + 1]; j++) {
+            if(g.pIdx[v+1] > g.pIdx[v])
+            for(ui j = g.pIdx[v+1] - 1; j >= g.pIdx[v]; j--) {
                 ui w = g.pEdge[j];
-                if(w <= u || g.connectHash(u, w)) continue;
+// printf("check %u-%u\n", v, w);
+                if(w == u) break;
+                if(vis[w]) continue;
 
-                if((++deg[w]) == q-s-2 || (q==s+2 && deg[w]==1)) {
+                // if((++deg[w]) == q-s-2 || (q==s+2 && deg[w]==1)) {
+                if(++deg[w] == q-s-1) {//non-nei have at least q-s-1 common neighbors
                     C.push_back(w);
+                    vis[w] = true;
                 }
+
+                if(j == 0) break;
             }
         }
         for(ui i = 0; i < edC1; i++) {
             ui v = C[i];
-            for(ui j = g.pIdx[v]; j < g.pIdx[v + 1]; j++) {
+// printf("uncheck %u, %u %u\n", v, g.pIdx[v+1], g.pIdx[v]);
+            if(g.pIdx[v+1] > g.pIdx[v])
+            for(ui j = g.pIdx[v+1] - 1; j >= g.pIdx[v]; j--) {
                 ui w = g.pEdge[j];
-                if(w > u) deg[w] = 0;
+// printf("uncheck %u-%u\n", v, w);
+                if(w == u) break;
+
+                deg[w] = 0;
+                if(j == 0) break;
             }
         }
-
+        for(ui i = edC1; i < C.size(); i++) {
+            vis[C[i]] = false;
+        }
+        for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
+            vis[g.pEdge[i]] = false;
+        }
+#ifdef DDEBUG
+for(auto v:C) if(neiInP[v] != 0) printf("no 0: %u\n", v);
+// for(auto v:C) assert(neiInP[v] == 0);
+#endif 
         for(ui i = 0; i < edC1; i++) neiInP[C[i]] = 1;
         std::sort(C.begin(), C.end());
+
 // for(auto v: C) printf("%u ", v);printf("\n");
         //build sub-graph g
         for(ui v : C) sg.pIdx[v] = sg.deg[0][v] = g.pIdx[v];
@@ -91,19 +139,28 @@ std::cout<<"    start "<<u<<' '<<answers[q]<<std::endl;
                 }
             }
         };
-        // for(ui v : C) buildSG(v);
-        // buildSG(u);
+        for(ui v : C) buildSG(v);
+        buildSG(u);
         for(auto v : C) level[v] = 0;
+        level[u] = 0;
 
+// for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
+//     vis[g.pEdge[i]] = true;
+// }
+#ifdef DDEBUG
+double preAns = answers[q];
+#endif
         P.push_back(u);
-        // listing(0, 0);
+        listing(0, 0);
         P.pop_back();
         for(ui i = 0; i < C.size(); i++) neiInP[C[i]] = 0;
+
+#ifdef DDEBUG
+printf("diff %u %.0f\n", u, answers[q] - preAns);
+#endif
     }
 
 #ifdef BASELINE
-#define BASELINES 1
-#define BASELINEQ 3
 auto print = [&](uint32_t x) {
     for(ui u = 0; u < g.n; u++) if((1<<u) & x) printf("%u ", u);
     printf("\n");
@@ -112,7 +169,9 @@ auto getMissEdges = [&](ui x) {
     ui TotalD = 0;
     for(ui u = 0; u < g.n; u++) if((1<<u) & x) {
         ui d = 0;
-        for(ui v = u + 1 ; v < g.n; v++) if((1<<v) & x){
+        for(ui v = u + 1 ; v < g.n; v++) if((1<<v) & x) {
+// assert(u < g.n && v < g.n);
+// printf("find %u %u\n", u, v);
             if(!g.connectHash(u, v)) d++;
         }
         TotalD += d;
@@ -122,8 +181,8 @@ auto getMissEdges = [&](ui x) {
 auto check = [&](ui x) {
     ui sz = 0;
     for(ui u = 0; u < g.n; u++) if((1<<u) & x) sz++;
-    if(sz != BASELINEQ) return false;
-    return getMissEdges(x) <= BASELINES;
+    if(sz != q) return false;
+    return getMissEdges(x) <= s;
 };
 
 ui cnt = 0;
@@ -139,12 +198,16 @@ printf("cnt:%u\n", cnt);
 }
 
 void sdcCounting::pivoter(ui deep, ui p, ui h) {
-// if(deep > maxD) {
-//     maxD = deep;
-//     printf("maxD:%u\n", maxD);
-// }
-    if(h == q) {
-        answers[q] += 1;
+#ifdef DDEBUG
+printf("pdeep %u, p %u, h %u\nC:", deep, p, h);
+for(auto v : nodes[deep]) printf("%u ", v); printf("\n");
+#endif
+
+    if(h == q-1) {
+        answers[q] += p + nodes[deep].size();
+#ifdef DDEBUG
+printf("ans += %u, pivoter1\n", p + nodes[deep].size());
+#endif
         return;
     }
 
@@ -152,6 +215,10 @@ void sdcCounting::pivoter(ui deep, ui p, ui h) {
     auto updateAns = [&]() {
         for(ui i = h; i <= q && i <= p + h; i++) {
             answers[i] += CN[p][i-h];
+#ifdef DDEBUG
+if(i==q)
+printf("ans += C[%u][%u] %.0f, pivoter2\n", p, i-h, CN[p][i-h]);
+#endif
         }
     };
 
@@ -181,7 +248,9 @@ void sdcCounting::pivoter(ui deep, ui p, ui h) {
         }
         else if(tmp == pivotDeg) num++;
     }
-
+#ifdef DDEBUG
+printf("pivot %u, pivotdeg %u, num %u\n", pivot, pivotDeg, num);
+#endif
     if(pivotDeg+1 == C.size() && num == C.size()) {
         p += C.size(); updateAns(); return;
     }
@@ -244,7 +313,7 @@ void sdcCounting::listing(ui deep, ui missedEdges) {
 printf("       deep %u\n", deep);
 printf("C:");
 for(ui i = 0; i < C.size(); i++) printf("%u ", C[i]); 
-printf("neiInPC:");
+printf("neiInP:");
 for(ui i = 0; i < C.size(); i++) printf("%u ", neiInP[C[i]]); printf("\n");
 printf("P:"); for(auto v:P) printf("%u ", v); printf("\n");
 printf("missE %u\n", missedEdges);
@@ -258,7 +327,9 @@ printf("ans+%u\n", C.size());
         answers[q] += C.size();
         return;
     }
+    
     if(missedEdges == s) {
+    // if(missedEdges == s &&  && C.size() > 8) {
         for(auto v : C) level[v] = deep;
         for(ui j = 0; j < C.size(); j++) {
             ui u = C[j];
@@ -272,7 +343,17 @@ printf("ans+%u\n", C.size());
                 else l++;
             }
         }
-
+#ifdef DDEBUG
+printf("pivoter parameter h %u\n", P.size());
+printf("subgrah:");
+for(auto v: C) {
+    printf("%u:", v);
+    for(ui i = sg.pIdx[v]; i < sg.deg[deep][v]; i++) {
+        ui w = sg.pEdge[i];
+        printf("%u ", w);
+    }printf("\n");
+}
+#endif
         pivoter(deep, 0, P.size());
 
         for(auto v : C) level[v] = 0;

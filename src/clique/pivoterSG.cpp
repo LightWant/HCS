@@ -4,6 +4,12 @@
 // #define DDEBUG
 // #define BASELINE
 
+#define BRANCHES
+
+#ifdef BRANCHES
+ui PNODES = 0, HNODES = 0;
+#endif
+
 #ifdef DDEBUG
 ui uu = 0, uuu = 0;
 #endif
@@ -29,25 +35,28 @@ uu = u;
 double p = answers[k];
 #endif
 
-// if(nodes[deep].size() == 0) continue;
+if(nodes[deep].size() == 0) continue;
         
-// std::vector<ui> & C = nodes[deep];
-// std::vector<ui> & nxtC = nodes[deep + 1];
-// nxtC.clear();
-// ui maxDeg = 0, maxV = C[0];
-// auto findM = [&](std::vector<ui> & C, ui & maxDeg, ui & maxV) {
-//     for(ui i = 0; i < C.size(); i++) {
-//         ui deg = 0;
-//         for(ui j = 0; j < C.size(); j++) {
-//             if(g.connectHash(C[i], C[j])) deg++;
-//         }
-//         if(deg > maxDeg) {
-//             maxDeg = deg;
-//             maxV = C[i];
-//         }
-//     }
-// };
-// findM(C, maxDeg, maxV);
+std::vector<ui> & C = nodes[deep];
+std::vector<ui> & nxtC = nodes[deep + 1];
+nxtC.clear();
+ui maxDeg = 0, maxV = C[0];
+auto findM = [&](std::vector<ui> & C, ui & maxDeg, ui & maxV) {
+    for(ui i = 0; i < C.size(); i++) {
+        ui deg = 0;
+        for(ui j = 0; j < C.size(); j++) {
+            if(g.connectHash(C[i], C[j])) deg++;
+        }
+        if(deg > maxDeg) {
+            maxDeg = deg;
+            maxV = C[i];
+        }
+    }
+};
+findM(C, maxDeg, maxV);
+for(auto v : C) {
+    if(!g.connectHash(maxV, v)) nxtC.push_back(v);
+}
 // std::vector<ui> cliqueNei, clique;
 // clique.clear(); cliqueNei.clear();
 // clique.push_back(maxV);
@@ -82,7 +91,7 @@ double p = answers[k];
 //     }
 // }
 // assert(nxtC.size() + clique.size() == C.size());
-//         deep += 1;
+        deep += 1;
         for(ui v : nodes[deep]) sg.pIdx[v] = sg.deg[deep][v] = g.pIdx[v];
         for(ui v : nodes[deep]) level[v] = deep;
         for(ui v : nodes[deep]) {
@@ -132,6 +141,10 @@ for(uint32_t i = (1<<g.n)-1; i > 0; i--) {
 }
 printf("cnt:%u\n", cnt);
 
+#endif
+
+#ifdef BRANCHES
+printf("hNodes:%u\npNodes:%u\n", HNODES, PNODES);
 #endif
     return answers;
 }
@@ -214,7 +227,9 @@ printf("pivot %u, pd %u\n", pivot, pivotDeg);
         }
     };
     updateSG();
-
+#ifdef BRANCHES
+PNODES++;
+#endif
     searchSG(deep + 1, p + 1, h);
     for(auto v:nxtC) level[v] = deep;
 
@@ -248,7 +263,9 @@ printf("%u ", C[i]);
             nxtC.push_back(w);
         }
         updateSG();
-
+#ifdef BRANCHES
+HNODES++;
+#endif
         searchSG(deep + 1, p, h + 1);
 
         for(auto v : nxtC) level[v] = deep;

@@ -1,6 +1,7 @@
 #include "../graph/graph.h"
 #include "../tools/getArgs.hpp"
 #include <iostream>
+#include <fstream>
 #include <chrono>
 
 int main(int argc, char * argv[])
@@ -33,6 +34,23 @@ int main(int argc, char * argv[])
     std::cout << "changeToCoreOrder:" << duration.count() << "ms" << std::endl;
 
     g.saveAsBin(ac["-d"]);
+
+    // std::ofstream otdata(ac["-d"] + "data_noUVM.txt");
+    // for(ui u = 0; u < g.n; u++) {
+    //     for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) {
+    //         otdata << u << ' ' << g.pEdge[i] << std::endl;
+    //     }
+    // }
+    // otdata.close();
+
+    std::ifstream in(ac["-label"]);
+    std::ofstream ot(ac["-label"] + "_new");
+    ui u, label;
+    while(in >> u >> label) {
+        ot << g.mp2[u] << ' ' << label << std::endl;
+    }
+    in.close();
+    ot.close();
 
     return 0;
 }

@@ -12,7 +12,7 @@
 ui maxD = 0;
 ui maxC = 0;
 std::vector<double> sdcCounting::run() {
-    printf("sdcCounting.cpp::run");
+    printf("sdcCountingMembuffer.cpp::run");
 
     g.initHash();
     printf("init Hash\n");fflush(stdout);
