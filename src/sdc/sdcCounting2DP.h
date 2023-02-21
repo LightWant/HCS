@@ -21,6 +21,9 @@ private:
     std::vector<ui> P, rP;
     // std::vector<ui> cntNNeiInH;
     std::vector<std::vector<double>> dp;
+    
+private://upper bound
+    std::vector<ui> bucket, Pbucket;
 
 private:
     void listing(ui deep, ui * C, ui sz, ui p, ui h, ui missEdges);

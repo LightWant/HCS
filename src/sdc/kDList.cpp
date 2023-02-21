@@ -6,6 +6,10 @@
 // #define BASELINE
 // #define DDEBUG
 
+// #define PRINT
+
+#define UPPER_BOUND
+
 #ifdef DDEBUG
 #include <iostream>
 #endif
@@ -13,9 +17,9 @@
 ull kdlist::run() {
     printf("kDList.cpp\n");
 
-#ifdef DDEBUG
-g.print();
-#endif
+// #ifdef DDEBUG
+// g.print();
+// #endif
     g.initHash();
     printf("init Hash\n");
 
@@ -55,6 +59,9 @@ std::cout<<"    start "<<u<<' '<<answer<<std::endl;
 
         //2-hop
         ui edC1 = C.size();
+#ifdef DDEBUG
+std::cout<<"    start "<<u<<' '<<answer<<' ' << edC1<<std::endl;
+#endif
         for(ui i = 0; i < edC1; i++) {
             ui v = C[i];
             for(ui j = g.pIdx[v]; j < g.pIdx[v + 1]; j++) {
@@ -77,6 +84,11 @@ std::cout<<"    start "<<u<<' '<<answer<<std::endl;
         for(ui i = 0; i < edC1; i++) neiInP[C[i]] = 1;
         std::sort(C.begin(), C.end());
 
+        if(C.size() + 1 < q) continue;
+
+#ifdef DDEBUG
+std::cout<<"    start "<<u<<' '<<answer<<' ' << C.size()<<std::endl;
+#endif
         //build sub-graph g
         auto buildV = [&](ui v) {
             sg.pIdx[v] = sg.pIdx2[v] = g.pIdx[v];
@@ -86,9 +98,16 @@ std::cout<<"    start "<<u<<' '<<answer<<std::endl;
                 if(g.connectHash(v, C[i])) sg.pEdge[sg.pIdx2[v]++] = C[i];
             }
         };
-        for(ui i = 0; i < C.size(); i++) buildV(C[i]);
+        for(ui i = 0; i < C.size(); i++) {
+#ifdef DDEBUG
+std::cout<<"    start "<<u<<' '<<answer<<' '<<i<<std::endl;
+#endif
+            //buildV(C[i]);
+        }
         buildV(u);
-
+#ifdef DDEBUG
+std::cout<<"    start "<<u<<' '<<answer<<std::endl;
+#endif
         
         // for(auto v : C) level[v] = 1;
         level[u] = 1;
@@ -150,6 +169,14 @@ printf("\n");
 #ifdef DDEBUG
 printf("ans+%u\n", C.size());
 #endif
+
+#ifdef PRINT
+for(auto v:C) {
+for(auto u : P) printf("%u ", u);
+printf(" %u\n", v);
+}
+
+#endif
         answer += C.size();
         return;
     }
@@ -169,23 +196,45 @@ printf("missE %u\n", missedEdges);
         ui newMissEdges = missedEdges + P.size() - neiInP[u];
         // if(newMissEdges > s) continue;
         P.push_back(u);
-
+#ifdef UPPER_BOUND
+        ui bd = P.size();
+        ui du = 0;
+        for(ui i = 0; i <= s; i++) bucket[i] = 0;
+#endif
         for(ui j = i + 1; j < C.size(); j++) {
             ui v = C[j];
             if(g.connectHash(u, v)) {
-                if(newMissEdges + P.size() - neiInP[C[j]] - 1 <= s) {
-                    neiInP[C[j]]++;
-                    newC.push_back(C[j]);
+                if(newMissEdges + P.size() - neiInP[v] - 1 <= s) {
+                    neiInP[v]++;
+                    newC.push_back(v);
+#ifdef UPPER_BOUND
+                    du++;
+                    bucket[P.size() - neiInP[v]]++;
+#endif
                 }
             }
             else {
-                if(newMissEdges + P.size() - neiInP[C[j]] <= s) {
-                    newC.push_back(C[j]);
+                if(newMissEdges + P.size() - neiInP[v] <= s) {
+                    newC.push_back(v);
                 }
             }
         }
-        
-        listing(deep + 1, newC, newMissEdges);
+
+#ifdef UPPER_BOUND 
+        bd += std::min(s-newMissEdges, (ui)newC.size() - du);
+        for(ui j = 0, ss = s; j <= s; j++) {
+            if(bucket[j]*j <= ss) {
+                ss -= bucket[j]*j;
+                bd += bucket[j];
+            } 
+            else {
+                bd += ss / j;
+                break;
+            }
+        }
+        if(bd >= q)
+#endif
+            listing(deep + 1, newC, newMissEdges);
 
         for(auto v: newC) if(g.connectHash(u, v)) neiInP[v]--;
         P.pop_back();

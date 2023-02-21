@@ -42,7 +42,7 @@ int main(int argc, char * argv[])
 //     printf("%u ", g.pEdge[i]);
 // }printf("\n");fflush(stdout);
     g.changeToCoreOrder();
-    // for(ui i = 0; i < g.n; i++) assert(g.pIdx[i+1] - g.pIdx2[i] <= g.coreNumber);
+    for(ui i = 0; i < g.n; i++) assert(g.pIdx[i+1] - g.pIdx2[i] <= g.coreNumber);
 
     auto s2 = std::chrono::steady_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(s2 - s1);
@@ -53,7 +53,7 @@ int main(int argc, char * argv[])
     int q = std::atoi(ac["-q"].c_str());
     int Q = 20;
     if(ac.exist("-Q")) Q = std::stoi(ac["-Q"]);
-    std::cout << "k:" << s << " q:" << q << " Q:" << Q << std::endl;
+    std::cout << "s:" << s << " q:" << q << " Q:" << Q << std::endl;
 
     sdcCounting pS(std::move(g), s, q, Q);
 

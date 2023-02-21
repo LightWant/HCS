@@ -244,29 +244,29 @@ sdcCounting2.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCounting.dir/build.make src/sdc/CMakeFiles/sdcCounting.dir/sdcCounting2.cpp.s
 .PHONY : sdcCounting2.cpp.s
 
-sdcCounting2DP.o: sdcCounting2DP.cpp.o
-.PHONY : sdcCounting2DP.o
+sdcCounting2DPUB.o: sdcCounting2DPUB.cpp.o
+.PHONY : sdcCounting2DPUB.o
 
 # target to build an object file
-sdcCounting2DP.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o
-.PHONY : sdcCounting2DP.cpp.o
+sdcCounting2DPUB.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o
+.PHONY : sdcCounting2DPUB.cpp.o
 
-sdcCounting2DP.i: sdcCounting2DP.cpp.i
-.PHONY : sdcCounting2DP.i
+sdcCounting2DPUB.i: sdcCounting2DPUB.cpp.i
+.PHONY : sdcCounting2DPUB.i
 
 # target to preprocess a source file
-sdcCounting2DP.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.i
-.PHONY : sdcCounting2DP.cpp.i
+sdcCounting2DPUB.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.i
+.PHONY : sdcCounting2DPUB.cpp.i
 
-sdcCounting2DP.s: sdcCounting2DP.cpp.s
-.PHONY : sdcCounting2DP.s
+sdcCounting2DPUB.s: sdcCounting2DPUB.cpp.s
+.PHONY : sdcCounting2DPUB.s
 
 # target to generate assembly for a file
-sdcCounting2DP.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.s
-.PHONY : sdcCounting2DP.cpp.s
+sdcCounting2DPUB.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/sdc/CMakeFiles/sdcCountingDP.dir/build.make src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.s
+.PHONY : sdcCounting2DPUB.cpp.s
 
 # Help Target
 help:
@@ -289,9 +289,9 @@ help:
 	@echo "... sdcCounting2.o"
 	@echo "... sdcCounting2.i"
 	@echo "... sdcCounting2.s"
-	@echo "... sdcCounting2DP.o"
-	@echo "... sdcCounting2DP.i"
-	@echo "... sdcCounting2DP.s"
+	@echo "... sdcCounting2DPUB.o"
+	@echo "... sdcCounting2DPUB.i"
+	@echo "... sdcCounting2DPUB.s"
 .PHONY : help
 
 

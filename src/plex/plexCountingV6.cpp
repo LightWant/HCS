@@ -1,10 +1,37 @@
-#include "plexLocal.h"
+#include "plexCounting.h"
+#include <iostream>
 
-void plexLocal::run() {
+// #define BASELINE
+#ifdef BASELINE
+#define BASELINEK 2
+#define BASELINEQ 3
+#endif
+
+// #define DDDEBUG
+
+// #define C1C2
+#ifdef C1C2
+ui c1 = 0, c2 = 0;
+#endif
+
+// #define TEST_CANDIDATE_REDUCTION
+
+#ifdef TEST_CANDIDATE_REDUCTION
+ull preSizeOfCandidate = 0;
+ull nowSizeOfCandidate = 0;
+#endif
+
+std::vector<double> plexCounting::run() {
+#ifdef DDDEBUG
+g.print();
+#endif
+    printf("plexCountingV6.cpp::run\n");
+    
     std::vector<ui> toDelete(std::min(g.n, g.maxD * k));
     toDelete.clear();
 
     g.initHash();
+    printf("init Hash\n");
 
     nadj.resize(g.n);
 
@@ -23,6 +50,10 @@ std::cout<<"    start "<<u<<' '<<answers[q]<<std::endl;
         nn.addNonNei(u, u);
 
         for(ui i = g.pIdx2[u]; i < g.pIdx[u + 1]; i++) C.changeTo(g.pEdge[i], edC++);
+#ifdef TEST_CANDIDATE_REDUCTION
+preSizeOfCandidate += edC;
+#endif
+
 #ifdef DDDEBUG
 printf("C:"); for(ui i = 0; i < edC; i++) printf("%u ", C[i]); printf("\n");
 printf("edC %u\n", edC);
@@ -60,6 +91,8 @@ printf("edC %u\n", edC);
             for(auto v : toDelete) C.changeTo(v, --edC);
             toDelete.clear();
         }
+
+
 #ifdef DDDEBUG
 printf("After delete C\n");
 printf("C:"); for(ui i = 0; i < edC; i++) printf("%u ", C[i]); printf("\n");
@@ -70,12 +103,17 @@ printf("C:"); for(ui i = 0; i < edC; i++) printf("%u ", C[i]); printf("\n");
             ui v = C[j];
             for(ui j = g.pIdx[v]; j < g.pIdx[v + 1]; j++) {
                 ui w = g.pEdge[j];
+#ifdef TEST_CANDIDATE_REDUCTION
+if(w > u)
+    preSizeOfCandidate += 1;
+#endif
                 if(w < u || g.connectHash(u, w)) continue;
                 if(C.isIn(w, 0, edC) || w == u) continue; 
                 ui d = 0;
-                
+
                 for(ui j = 0; j < ed; j++) {
                     ui x = C[j]; 
+
                     if(g.connectHash(w, x)) {
                         d++;
 
@@ -109,78 +147,102 @@ printf("C:"); for(ui i = 0; i < edC; i++) printf("%u ", C[i]); printf("\n");
             }
         };
         for(ui i = 0; i < edC; i++) buildV(C[i]);
-        
         buildV(u);
+        
+#ifdef DDDEBUG
+printf("sg:\n");
+for(ui i = 0; i < edC; i++) {
+    ui v = C[i];
+    printf("%u:", v);
+    for(ui j = sg.pIdx[v]; j < sg.pIdx2[v]; j++) {
+        ui w = sg.pEdge[j];
+        printf("%u ", w);
+    }printf("\n");
+}printf("\n");
+#endif
 
+#ifdef TEST_CANDIDATE_REDUCTION
+nowSizeOfCandidate += edC;
+#else
         bkPivot(1, edC, edP, 0, 1);
-
+#endif
         for(ui i = 0; i < edC; i++) nn.clear(C[i]);
         for(ui i = 0; i < edP; i++) nn.clear(P[i]);
     }
 
-    for(ui i = 0; i < g.m/2; i++) {
-        printf("%.0f\n", answers[reEegeId[i]]);
+#ifdef TEST_CANDIDATE_REDUCTION
+printf("preSizeOfCandidate:%llu\n", preSizeOfCandidate);
+printf("nowSizeOfCandidate:%llu\n", nowSizeOfCandidate);
+#endif
+
+#ifdef BASELINE
+auto print = [&](uint32_t x) {
+    for(ui u = 0; u < g.n; u++) if((1<<u) & x) printf("%u ", u);
+    printf("\n");
+};
+auto check = [&](ui x) {
+    ui sz = 0;
+    for(ui u = 0; u < g.n; u++) if((1<<u) & x) sz++;
+    if(sz != BASELINEQ) return false;
+
+    for(ui u = 0; u < g.n; u++) if((1<<u) & x){
+        ui d = 0;
+        for(ui v = 0; v < g.n; v++) if((1<<v) & x){
+            if(g.connectHash(u, v)) d++;
+        }
+        if(d + BASELINEK < BASELINEQ) return false; 
+    }
+    return true;
+};
+
+ui cnt = 0;
+for(uint32_t i = (1<<g.n)-1; i > 0; i--) {
+    if(check(i)) {
+        cnt++;
+        print(i);
     }
 }
+printf("cnt:%u\n", cnt);
 
-//Pn is the set of pivot, P is the enumerated nodes.
-void plexLocal::bkPivot(ui deep, ui edC, ui edP, ui p, ui h) {
+#endif
+
+#ifdef C1C2
+printf("c1:%u\n", c1);
+printf("c2:%u\n", c2);
+#endif
+    return answers;
+}
+
+
+void plexCounting::bkPivot(ui deep, ui edC, ui edP, ui p, ui h) {
 #ifdef DDDEBUG
 printf("deep %u, p %u, h %u\n", deep, p, h);
 printf("C:"); for(ui i = 0; i < edC; i++) printf("%u ", C[i]); printf("\n");
 printf("P:"); for(ui i = 0; i < edP; i++) printf("%u ", P[i]); printf("\n");
 #endif
-    auto updateAns = [&]() {
-        if(q >= h+2)
-        for(auto i : PP) {
-            answers[i] += CN[p-2][q-h-2];
-        }
-        if(q >= h+1)
-        for(auto i : PH) answers[i] += CN[p-1][q-h-1];
-        for(auto i : HH) answers[i] += CN[p][q-h];
-    };
 
-    auto addEdges = [&](std::vector<ui> & edges, ui a, ui b) {
-        if(a > b) std::swap(a, b);
-
-        auto st = pOEdge.begin() + pOIdx[a];
-        auto ed = pOEdge.begin() + pOIdx[a + 1];
-        ui idx = std::lower_bound(st, ed, b) - pOEdge.begin(); 
-
-        edges.push_back(idx);
-    };
-
-    if(h == q) {
-        for(auto i : HH) answers[i] += 1;
-        return;
-    }
 
     if(edC == 0) {
 #ifdef DDDEBUG
 printf("    edC == 0\n");
 #endif
-        updateAns(); return;
-        return;
-    }
-    if(edC == 1) {
-for(ui i = 0; i < p; i++) addEdges(PP, C[0], Pn[i]);
-for(ui i = 0; i < h; i++) 
-    if(g.connectHash(C[0], H[i])) 
-        addEdges(PH, C[0], H[i]);
-p += 1; 
-    
-        updateAns(); 
-
-p -= 1;
-for(ui i = 0; i < p; i++) PP.pop_back();
-for(ui i = 0; i < h; i++)
-    if(g.connectHash(C[0], H[i])) 
-        PH.pop_back();
+        if(p + h >= q) {
+#ifdef DDDEBUG
+printf("    P is ans!\n");
+#endif
+            for(ui i = std::max(q, h); i <= p + h && i <= Q; i++) {
+                answers[i] += CN[p][i - h];
+            }
+        }
         return;
     }
 
     if(p + h + edC < q) return;
-
+    if(h == Q-1) {
+        answers[Q-1] += 1;
+        answers[Q] += p + edC;
+        return;
+    }
     // if(h == Q) {
     //     answers[Q] += 1;
     //     return;
@@ -258,27 +320,7 @@ printf("\n");
 #ifdef DDDEBUG
 printf(" P+C!; minDPC %u\n", minDPC);
 #endif
-        for(ui i = 0; i < edC; i++) {
-            ui u = C[i];
-
-            for(ui j = 0; j < p; j++) addEdges(PP, u, Pn[j]);
-            for(ui j = 0; j < h; j++) 
-                if(g.connectHash(u, H[j])) 
-                    addEdges(PH, u, H[j]);
-            Pn[p++] = u;
-        }
-        
         bkPivot(deep + 1, 0, 0, p + edC, h);
-
-        for(ui i = 0; i < edC; i++) {
-            ui u = C[i];
-
-            p--;
-            for(ui j = 0; j < p; j++) PP.pop_back();
-            for(ui j = 0; j < h; j++)
-                if(g.connectHash(u, H[j])) 
-                    PH.pop_back();
-        }
         return;
     }
 
@@ -288,20 +330,27 @@ printf(" P+C!; minDPC %u\n", minDPC);
     
     bool isP = true;
     ui countOfNonNeihborOfPv = nn.getCntNonNei(pv);
-    ui C1Size = 0, C2Size = 0;
+    ui C1Size = 0;
+    bool isPivot = true;
+    for(ui i = 0; i < countOfNonNeihborOfPv; i++) {
+        ui w = nn.buffer[pv*k + i];
+        Pbucket[i] = nn.getCntNonNei(w);
+    }
     for(ui j = 0; j < edC; j++) { 
         ui v = C[j];
         if(v == pv) continue;
         if(g.connectHash(pv, v)) {
             // if(hasCommenNonNeighbor(pv, v)) cand[candSize++] = v;
             // bool isInC1 = true;
+            if(isPivot)
             for(ui i = 0; i < countOfNonNeihborOfPv; i++) {
                 ui w = nn.buffer[pv*k + i];
                 if(!g.connectHash(v, w)) {
-                    // cand[candSize++] = v;
-                    C2Size++;
-                    // isInC1 = false;
-                    break;
+                    Pbucket[i]++;
+                    if(Pbucket[i] >= k) {
+                        isPivot = false;
+                        break;
+                    }
                 }
             }
             // if(isInC1) 
@@ -324,12 +373,14 @@ printf(" P+C!; minDPC %u\n", minDPC);
             cand[candSize++] = v;
         }
     }
-    if(C2Size > 0) cand[candSize++] = pv;
+    if(!isPivot) cand[candSize++] = pv;
 #ifdef DDDEBUG
 printf("pv: %u", pv);
 printf("cand:");
 for(ui i = 0; i < candSize; i++) printf("%u ", cand[i]);printf("\n");
 #endif
+
+    
 
     auto updateC = [&](ui v, LinearSet & T, ui ed) {
         ui newEnd = ed;
@@ -426,15 +477,10 @@ c2++;
 #endif 
 //和pv没有公共非邻居的点，不用枚举
     
-    if(C2Size == 0) {
+    if(isPivot) {
         P.changeTo(pv, edP++);
-Pn[p] = pv;
-for(ui i = 0; i < p; i++) addEdges(PP, pv, Pn[i]);
-for(ui i = 0; i < h; i++) if(g.connectHash(pv, H[i])) addEdges(PH, pv, H[i]);
         bkPivot(deep + 1, C1Size, edP, p+1, h);
         P.changeTo(pv, --edP);
-for(ui i = 0; i < p; i++) PP.pop_back();
-for(ui i = 0; i < h; i++) if(g.connectHash(pv, H[i]))  PH.pop_back();
     }
     else{
         bkPivot(deep + 1, C1Size, edP, p, h);
@@ -517,13 +563,9 @@ printf("upPrune %u\n", v);
             C.changeTo(v, --edC);
             continue;
         }
-H[h] = v;
-for(ui j = 0; j < h; j++) if(g.connectHash(v, H[j]))  addEdges(HH, v, H[j]);
-for(ui j = 0; j < p; j++) addEdges(PH, v, Pn[j]); 
+
         ui newEdC = solvePre(v);
         bkPivot(deep + 1, newEdC, edP, p, h + 1);
         solveBack(v, newEdC);
-for(ui i = 0; i < h; i++) if(g.connectHash(v, H[i]))  HH.pop_back();
-for(ui i = 0; i < p; i++) PH.pop_back();
     }
 }

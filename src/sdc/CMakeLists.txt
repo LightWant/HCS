@@ -9,5 +9,5 @@ target_link_libraries(kDList Graph types)
 add_library(sdcCounting sdcCounting2.h sdcCounting2.cpp)
 target_link_libraries(sdcCounting Graph types)
 
-add_library(sdcCountingDP sdcCounting2DP.h sdcCounting2DP.cpp)
+add_library(sdcCountingDP sdcCounting2DP.h sdcCounting2DPUB.cpp)
 target_link_libraries(sdcCountingDP Graph types)

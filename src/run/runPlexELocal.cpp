@@ -10,7 +10,7 @@ void printUsage() {
     std::cout << "-f graph file directory(edge.bin & idx.bin)" << std::endl;
     std::cout << "-f_txt graph file text file, each edge exists one time" << std::endl;
     std::cout << "-f_txtD graph file text file, each edge exists two times" << std::endl;
-    std::cout << "-k" << std::endl;
+    std::cout << "-s" << std::endl;
     std::cout << "-q" << std::endl;
 }
 
@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
         printUsage();
         return 0;
     }
-    else if(!ac.exist("-k") || !ac.exist("-q")) {
+    else if(!ac.exist("-s") || !ac.exist("-q")) {
         printUsage();
         return 0;
     }
@@ -47,20 +47,20 @@ int main(int argc, char * argv[])
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(s2 - s1);
     // std::cout << "changeToCoreOrder:" << duration.count() << "ms" << std::endl;
 
-    int k = std::stoi(ac["-k"]);
+    int s = std::stoi(ac["-s"]);
     int q = std::stoi(ac["-q"]);
     // std::cout << "s:" << s << std::endl;
     // std::cout << "q:" << q << std::endl;
 
-    plexLocal pC(std::move(g), k, q);
+    plexLocal pC(std::move(g), s+1, q);
 
-    // auto t1 = std::chrono::steady_clock::now();
+    auto t1 = std::chrono::steady_clock::now();
     
     pC.run();
 
-    // auto t2 = std::chrono::steady_clock::now();
-    // auto durationt = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1);
-    // std::cout << "time:" << durationt.count() << "ms" << std::endl;
+    auto t2 = std::chrono::steady_clock::now();
+    auto durationt = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1);
+    std::cout << "time:" << durationt.count() << "ms" << std::endl;
 
     return 0;
 }

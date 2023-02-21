@@ -10,7 +10,7 @@ void printUsage() {
     std::cout << "-f graph file directory(edge.bin & idx.bin)" << std::endl;
     std::cout << "-f_txt graph file text file, each edge exists one time" << std::endl;
     std::cout << "-f_txtD graph file text file, each edge exists two times" << std::endl;
-    std::cout << "-k" << std::endl;
+    std::cout << "-s" << std::endl;
     std::cout << "-q" << std::endl;
 }
 
@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
         printUsage();
         return 0;
     }
-    else if(!ac.exist("-k") || !ac.exist("-q")) {
+    else if(!ac.exist("-s") || !ac.exist("-q")) {
         printUsage();
         return 0;
     }
@@ -47,11 +47,12 @@ int main(int argc, char * argv[])
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(s2 - s1);
     std::cout << "changeToCoreOrder:" << duration.count() << "ms" << std::endl;
 
-    int k = std::atoi(ac["-k"].c_str());
+    int s = std::atoi(ac["-s"].c_str());
+    int k = s + 1;
     int q = std::atoi(ac["-q"].c_str());
     int Q = 20;
     if(ac.exist("-Q")) Q = std::stoi(ac["-Q"]);
-    std::cout << "k:" << k << " q:" << q << " Q:" << Q << std::endl;
+    std::cout << "s:" << s << " q:" << q << " Q:" << Q << std::endl;
 
     plexCounting pC(std::move(g), k, q, Q);
 

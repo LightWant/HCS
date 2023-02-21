@@ -1,6 +1,6 @@
 #include "../graph/graph.h"
 #include "../tools/getArgs.hpp"
-#include "../local/sdcLocal.h"
+#include "../local/plexLocal.h"
 #include <iostream>
 #include <chrono>
 #include <iomanip>
@@ -52,15 +52,15 @@ int main(int argc, char * argv[])
     // std::cout << "s:" << s << std::endl;
     // std::cout << "q:" << q << std::endl;
 
-    sdcLocal pC(std::move(g), s, q);
+    plexLocal pC(std::move(g), s+1, q);
 
-    // auto t1 = std::chrono::steady_clock::now();
+    auto t1 = std::chrono::steady_clock::now();
     
     pC.run();
 
-    // auto t2 = std::chrono::steady_clock::now();
-    // auto durationt = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1);
-    // std::cout << "time:" << durationt.count() << "ms" << std::endl;
+    auto t2 = std::chrono::steady_clock::now();
+    auto durationt = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1);
+    std::cout << "time:" << durationt.count() << "ms" << std::endl;
 
     return 0;
 }

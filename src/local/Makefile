@@ -131,32 +131,60 @@ cliqueLocal/fast:
 .PHONY : cliqueLocal/fast
 
 # Convenience name for target.
-src/local/CMakeFiles/sdcLocal.dir/rule:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/local/CMakeFiles/sdcLocal.dir/rule
-.PHONY : src/local/CMakeFiles/sdcLocal.dir/rule
+src/local/CMakeFiles/sdcELocal.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/local/CMakeFiles/sdcELocal.dir/rule
+.PHONY : src/local/CMakeFiles/sdcELocal.dir/rule
 
 # Convenience name for target.
-sdcLocal: src/local/CMakeFiles/sdcLocal.dir/rule
-.PHONY : sdcLocal
+sdcELocal: src/local/CMakeFiles/sdcELocal.dir/rule
+.PHONY : sdcELocal
 
 # fast build rule for target.
-sdcLocal/fast:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcLocal.dir/build.make src/local/CMakeFiles/sdcLocal.dir/build
-.PHONY : sdcLocal/fast
+sdcELocal/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcELocal.dir/build.make src/local/CMakeFiles/sdcELocal.dir/build
+.PHONY : sdcELocal/fast
 
 # Convenience name for target.
-src/local/CMakeFiles/plexLocal.dir/rule:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/local/CMakeFiles/plexLocal.dir/rule
-.PHONY : src/local/CMakeFiles/plexLocal.dir/rule
+src/local/CMakeFiles/plexELocal.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/local/CMakeFiles/plexELocal.dir/rule
+.PHONY : src/local/CMakeFiles/plexELocal.dir/rule
 
 # Convenience name for target.
-plexLocal: src/local/CMakeFiles/plexLocal.dir/rule
-.PHONY : plexLocal
+plexELocal: src/local/CMakeFiles/plexELocal.dir/rule
+.PHONY : plexELocal
 
 # fast build rule for target.
-plexLocal/fast:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexLocal.dir/build.make src/local/CMakeFiles/plexLocal.dir/build
-.PHONY : plexLocal/fast
+plexELocal/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexELocal.dir/build.make src/local/CMakeFiles/plexELocal.dir/build
+.PHONY : plexELocal/fast
+
+# Convenience name for target.
+src/local/CMakeFiles/sdcVLocal.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/local/CMakeFiles/sdcVLocal.dir/rule
+.PHONY : src/local/CMakeFiles/sdcVLocal.dir/rule
+
+# Convenience name for target.
+sdcVLocal: src/local/CMakeFiles/sdcVLocal.dir/rule
+.PHONY : sdcVLocal
+
+# fast build rule for target.
+sdcVLocal/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcVLocal.dir/build.make src/local/CMakeFiles/sdcVLocal.dir/build
+.PHONY : sdcVLocal/fast
+
+# Convenience name for target.
+src/local/CMakeFiles/plexVLocal.dir/rule:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/local/CMakeFiles/plexVLocal.dir/rule
+.PHONY : src/local/CMakeFiles/plexVLocal.dir/rule
+
+# Convenience name for target.
+plexVLocal: src/local/CMakeFiles/plexVLocal.dir/rule
+.PHONY : plexVLocal
+
+# fast build rule for target.
+plexVLocal/fast:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexVLocal.dir/build.make src/local/CMakeFiles/plexVLocal.dir/build
+.PHONY : plexVLocal/fast
 
 cliqueLocal.o: cliqueLocal.cpp.o
 .PHONY : cliqueLocal.o
@@ -182,53 +210,101 @@ cliqueLocal.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/cliqueLocal.dir/build.make src/local/CMakeFiles/cliqueLocal.dir/cliqueLocal.cpp.s
 .PHONY : cliqueLocal.cpp.s
 
-plexLocal.o: plexLocal.cpp.o
-.PHONY : plexLocal.o
+plexELocal.o: plexELocal.cpp.o
+.PHONY : plexELocal.o
 
 # target to build an object file
-plexLocal.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexLocal.dir/build.make src/local/CMakeFiles/plexLocal.dir/plexLocal.cpp.o
-.PHONY : plexLocal.cpp.o
+plexELocal.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexELocal.dir/build.make src/local/CMakeFiles/plexELocal.dir/plexELocal.cpp.o
+.PHONY : plexELocal.cpp.o
 
-plexLocal.i: plexLocal.cpp.i
-.PHONY : plexLocal.i
+plexELocal.i: plexELocal.cpp.i
+.PHONY : plexELocal.i
 
 # target to preprocess a source file
-plexLocal.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexLocal.dir/build.make src/local/CMakeFiles/plexLocal.dir/plexLocal.cpp.i
-.PHONY : plexLocal.cpp.i
+plexELocal.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexELocal.dir/build.make src/local/CMakeFiles/plexELocal.dir/plexELocal.cpp.i
+.PHONY : plexELocal.cpp.i
 
-plexLocal.s: plexLocal.cpp.s
-.PHONY : plexLocal.s
+plexELocal.s: plexELocal.cpp.s
+.PHONY : plexELocal.s
 
 # target to generate assembly for a file
-plexLocal.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexLocal.dir/build.make src/local/CMakeFiles/plexLocal.dir/plexLocal.cpp.s
-.PHONY : plexLocal.cpp.s
+plexELocal.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexELocal.dir/build.make src/local/CMakeFiles/plexELocal.dir/plexELocal.cpp.s
+.PHONY : plexELocal.cpp.s
 
-sdcLocal.o: sdcLocal.cpp.o
-.PHONY : sdcLocal.o
+plexVLocal.o: plexVLocal.cpp.o
+.PHONY : plexVLocal.o
 
 # target to build an object file
-sdcLocal.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcLocal.dir/build.make src/local/CMakeFiles/sdcLocal.dir/sdcLocal.cpp.o
-.PHONY : sdcLocal.cpp.o
+plexVLocal.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexVLocal.dir/build.make src/local/CMakeFiles/plexVLocal.dir/plexVLocal.cpp.o
+.PHONY : plexVLocal.cpp.o
 
-sdcLocal.i: sdcLocal.cpp.i
-.PHONY : sdcLocal.i
+plexVLocal.i: plexVLocal.cpp.i
+.PHONY : plexVLocal.i
 
 # target to preprocess a source file
-sdcLocal.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcLocal.dir/build.make src/local/CMakeFiles/sdcLocal.dir/sdcLocal.cpp.i
-.PHONY : sdcLocal.cpp.i
+plexVLocal.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexVLocal.dir/build.make src/local/CMakeFiles/plexVLocal.dir/plexVLocal.cpp.i
+.PHONY : plexVLocal.cpp.i
 
-sdcLocal.s: sdcLocal.cpp.s
-.PHONY : sdcLocal.s
+plexVLocal.s: plexVLocal.cpp.s
+.PHONY : plexVLocal.s
 
 # target to generate assembly for a file
-sdcLocal.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcLocal.dir/build.make src/local/CMakeFiles/sdcLocal.dir/sdcLocal.cpp.s
-.PHONY : sdcLocal.cpp.s
+plexVLocal.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/plexVLocal.dir/build.make src/local/CMakeFiles/plexVLocal.dir/plexVLocal.cpp.s
+.PHONY : plexVLocal.cpp.s
+
+sdcELocal.o: sdcELocal.cpp.o
+.PHONY : sdcELocal.o
+
+# target to build an object file
+sdcELocal.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcELocal.dir/build.make src/local/CMakeFiles/sdcELocal.dir/sdcELocal.cpp.o
+.PHONY : sdcELocal.cpp.o
+
+sdcELocal.i: sdcELocal.cpp.i
+.PHONY : sdcELocal.i
+
+# target to preprocess a source file
+sdcELocal.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcELocal.dir/build.make src/local/CMakeFiles/sdcELocal.dir/sdcELocal.cpp.i
+.PHONY : sdcELocal.cpp.i
+
+sdcELocal.s: sdcELocal.cpp.s
+.PHONY : sdcELocal.s
+
+# target to generate assembly for a file
+sdcELocal.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcELocal.dir/build.make src/local/CMakeFiles/sdcELocal.dir/sdcELocal.cpp.s
+.PHONY : sdcELocal.cpp.s
+
+sdcVLocal.o: sdcVLocal.cpp.o
+.PHONY : sdcVLocal.o
+
+# target to build an object file
+sdcVLocal.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcVLocal.dir/build.make src/local/CMakeFiles/sdcVLocal.dir/sdcVLocal.cpp.o
+.PHONY : sdcVLocal.cpp.o
+
+sdcVLocal.i: sdcVLocal.cpp.i
+.PHONY : sdcVLocal.i
+
+# target to preprocess a source file
+sdcVLocal.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcVLocal.dir/build.make src/local/CMakeFiles/sdcVLocal.dir/sdcVLocal.cpp.i
+.PHONY : sdcVLocal.cpp.i
+
+sdcVLocal.s: sdcVLocal.cpp.s
+.PHONY : sdcVLocal.s
+
+# target to generate assembly for a file
+sdcVLocal.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/local/CMakeFiles/sdcVLocal.dir/build.make src/local/CMakeFiles/sdcVLocal.dir/sdcVLocal.cpp.s
+.PHONY : sdcVLocal.cpp.s
 
 # Help Target
 help:
@@ -239,17 +315,25 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cliqueLocal"
-	@echo "... plexLocal"
-	@echo "... sdcLocal"
+	@echo "... plexELocal"
+	@echo "... plexVLocal"
+	@echo "... sdcELocal"
+	@echo "... sdcVLocal"
 	@echo "... cliqueLocal.o"
 	@echo "... cliqueLocal.i"
 	@echo "... cliqueLocal.s"
-	@echo "... plexLocal.o"
-	@echo "... plexLocal.i"
-	@echo "... plexLocal.s"
-	@echo "... sdcLocal.o"
-	@echo "... sdcLocal.i"
-	@echo "... sdcLocal.s"
+	@echo "... plexELocal.o"
+	@echo "... plexELocal.i"
+	@echo "... plexELocal.s"
+	@echo "... plexVLocal.o"
+	@echo "... plexVLocal.i"
+	@echo "... plexVLocal.s"
+	@echo "... sdcELocal.o"
+	@echo "... sdcELocal.i"
+	@echo "... sdcELocal.s"
+	@echo "... sdcVLocal.o"
+	@echo "... sdcVLocal.i"
+	@echo "... sdcVLocal.s"
 .PHONY : help
 
 

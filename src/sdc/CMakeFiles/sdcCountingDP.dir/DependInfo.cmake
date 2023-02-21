@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/yexw/maximalKPlex/src/sdc/sdcCounting2DP.cpp" "src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o" "gcc" "src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o.d"
+  "/home/yexw/maximalKPlex/src/sdc/sdcCounting2DPUB.cpp" "src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o" "gcc" "src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o.d"
   )
 
 # Targets to which this target links.

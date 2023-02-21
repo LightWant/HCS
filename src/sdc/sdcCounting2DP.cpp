@@ -86,6 +86,10 @@ for(ui i = 0; i < sz; i++) printf("%u ", C[i]); printf("\n");
                 if(vis[w]) continue;
 
                 if(++deg[w] == q-s-1) {//non-nei have at least q-s-1 common neighbors
+// if(sz >= g.n) {
+    // printf("sz %u, i %u, j %u\n", sz, i, j);
+    // fflush(stdout);
+// }
                     C[sz++] = w;
                     vis[w] = true;
                 }
@@ -399,11 +403,14 @@ for(ui i = 0; i < candSise; i++) printf("%u ", cand[i]); printf("\n");
 }
 
 sdcCounting::sdcCounting(Graph && g, ui s, ui q, ui Q):g(g), s(s), q(q), Q(Q) {
-    ui maxDepth = g.coreNumber + s + 5;
+    ui maxDepth = g.coreNumber * g.coreNumber;
     ui maxCSize = std::min(g.coreNumber * g.coreNumber, g.n);
+    // if(maxCSize < 100000)
+    //     maxCSize = 100000;
     candBuffer = new ui[maxDepth * maxCSize];
 
     initBuffer(maxDepth * maxCSize);
+
 
     sg.pIdx.resize(g.n);
     sg.pEdge.resize(g.m);

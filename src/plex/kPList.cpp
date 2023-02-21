@@ -4,6 +4,8 @@
 // #define BASELINE
 // #define DDDEBUG
 
+// #define PRINT
+
 #ifdef DDDEBUG
 #include <iostream>
 #endif
@@ -196,6 +198,13 @@ for(auto v:C) {
     if(P.size() == q - 1) {
 #ifdef DDDEBUG
 printf("ans+%u\n", C.size());
+#endif
+
+#ifdef PRINT
+for(auto v: C) {
+    for(auto u:P) printf("%u ", u);
+    printf(" %u\n", v);
+}
 #endif
         answer += C.size();
         return;

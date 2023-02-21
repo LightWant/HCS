@@ -69,28 +69,28 @@ include src/sdc/CMakeFiles/sdcCountingDP.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/sdc/CMakeFiles/sdcCountingDP.dir/flags.make
 
-src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o: src/sdc/CMakeFiles/sdcCountingDP.dir/flags.make
-src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o: src/sdc/sdcCounting2DP.cpp
-src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o: src/sdc/CMakeFiles/sdcCountingDP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o"
-	cd /home/yexw/maximalKPlex/src/sdc && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o -MF CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o.d -o CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o -c /home/yexw/maximalKPlex/src/sdc/sdcCounting2DP.cpp
+src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o: src/sdc/CMakeFiles/sdcCountingDP.dir/flags.make
+src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o: src/sdc/sdcCounting2DPUB.cpp
+src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o: src/sdc/CMakeFiles/sdcCountingDP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o"
+	cd /home/yexw/maximalKPlex/src/sdc && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o -MF CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o.d -o CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o -c /home/yexw/maximalKPlex/src/sdc/sdcCounting2DPUB.cpp
 
-src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.i"
-	cd /home/yexw/maximalKPlex/src/sdc && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yexw/maximalKPlex/src/sdc/sdcCounting2DP.cpp > CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.i
+src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.i"
+	cd /home/yexw/maximalKPlex/src/sdc && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yexw/maximalKPlex/src/sdc/sdcCounting2DPUB.cpp > CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.i
 
-src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.s"
-	cd /home/yexw/maximalKPlex/src/sdc && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yexw/maximalKPlex/src/sdc/sdcCounting2DP.cpp -o CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.s
+src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.s"
+	cd /home/yexw/maximalKPlex/src/sdc && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yexw/maximalKPlex/src/sdc/sdcCounting2DPUB.cpp -o CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.s
 
 # Object files for target sdcCountingDP
 sdcCountingDP_OBJECTS = \
-"CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o"
+"CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o"
 
 # External object files for target sdcCountingDP
 sdcCountingDP_EXTERNAL_OBJECTS =
 
-src/sdc/libsdcCountingDP.a: src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DP.cpp.o
+src/sdc/libsdcCountingDP.a: src/sdc/CMakeFiles/sdcCountingDP.dir/sdcCounting2DPUB.cpp.o
 src/sdc/libsdcCountingDP.a: src/sdc/CMakeFiles/sdcCountingDP.dir/build.make
 src/sdc/libsdcCountingDP.a: src/sdc/CMakeFiles/sdcCountingDP.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yexw/maximalKPlex/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsdcCountingDP.a"

@@ -82,6 +82,9 @@ private://nadj
 private:
     void bkPivot(ui deep, ui edC, ui edP, ui p, ui h);
 
+private://optimization of D2k
+    std::vector<ui> Pbucket;
+    
 private: //v5, dp
     std::vector<ui> Pnon, Pr, H;
     std::vector<double> dp;
@@ -104,6 +107,8 @@ public:
         support.resize(g.n);
 
         answers.resize(Q+1, 0);
+
+        Pbucket.resize(k);
 
         computeC();
 

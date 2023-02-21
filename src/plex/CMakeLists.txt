@@ -6,7 +6,7 @@ target_link_libraries(plexEnumerator Graph linearSet types)
 add_library(d2k d2k.h d2kng.cpp)
 target_link_libraries(d2k Graph linearSet types)
 
-add_library(plexCounting plexCounting.h plexCountingV4.cpp)
+add_library(plexCounting plexCounting.h plexCountingV6.cpp)
 target_link_libraries(plexCounting Graph linearSet types)
 
 add_library(kPList kPList.h kPList.cpp)

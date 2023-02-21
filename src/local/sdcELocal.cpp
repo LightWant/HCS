@@ -11,7 +11,7 @@
 #endif
 
 void sdcLocal::run() {
-    // printf("sdcLocal.cpp::run");
+    printf("sdcELocal.cpp::run\n");
 
     g.initHash();
     // printf("init Hash\n");fflush(stdout);
@@ -137,9 +137,9 @@ for(ui i = 0; i < sz; i++) printf("%u ", C[i]); printf("\n");
 
     }
 
-    for(ui i = 0; i < g.m/2; i++) {
-        printf("%.0f\n", answers[reEegeId[i]]);
-    }
+    // for(ui i = 0; i < g.m/2; i++) {
+    //     printf("%.0f\n", answers[reEegeId[i]]);
+    // }
 
 #ifdef BASELINE
 std::vector<ui> ec(g.m/2, 0);
@@ -577,7 +577,7 @@ H.pop_back();
 }
 
 sdcLocal::sdcLocal(Graph && g, ui s, ui q):g(g), s(s), q(q) {
-    ui maxDepth = g.coreNumber + s + 5;
+    ui maxDepth = g.coreNumber * g.coreNumber;
     ui maxCSize = std::min(g.coreNumber * g.coreNumber, g.n);
     candBuffer = new ui[maxDepth * maxCSize];
 
@@ -636,5 +636,5 @@ sdcLocal::sdcLocal(Graph && g, ui s, ui q):g(g), s(s), q(q) {
         reEegeId[i] = idx;
     }
 
-    // printf("sdcLocal::sdcLocal\n");
+    printf("sdcLocal::sdcELocal\n");fflush(stdout);
 }

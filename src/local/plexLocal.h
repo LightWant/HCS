@@ -43,9 +43,9 @@ private:
     std::vector<double> answers;
 
 private://combinatorial number
-    const ui maxSize = 1000;
+    ui maxSize = 1000;
     double ** CN = nullptr, *bf3 = nullptr;
-    ui maxD = maxSize*10, maxD2 = maxSize;
+    ui maxD = maxSize, maxD2 = maxSize;
     void computeC() {
         CN = new double*[maxD];
         bf3 = new double[maxD2 * maxD];
@@ -79,65 +79,7 @@ private://edge idx
     std::vector<ui> Pn, H, PP, PH, HH;
 
 public:
-    plexLocal(Graph && g, ui k, ui q):g(g), k(k), q(q) { 
-        C.resize(g.n);
-        P.resize(g.n);
-
-        sg.pIdx.resize(g.n);
-        sg.pIdx2.resize(g.n);
-        sg.pEdge.resize(g.m);
-
-        sg.deg.resize(g.n);
-        sg.deg[0].resize(g.n);
-
-        nn.init(g.n, k);
-
-        bucket.resize(k);
-        support.resize(g.n);
-
-        answers.resize(g.m);
-
-        computeC();
-
-        pOEdge.resize(g.m / 2);
-        pOIdx.resize(g.n + 1);
-        for(ui u = 0; u < g.n; u++) {
-            pOIdx[u + 1] = pOIdx[u];
-            for(ui j = g.pIdx2[u]; j < g.pIdx[u + 1]; j++) {
-                pOEdge[pOIdx[u+1]++] = g.pEdge[j];
-            }
-        }
-
-        // P, H, PP, PH, HH
-        P.resize(maxSize);
-        H.resize(maxSize);
-
-        ui maxSize2 = maxSize * maxSize;
-        PP.resize(maxSize2);
-        PH.resize(maxSize2);
-        HH.resize(maxSize2);
-        PP.clear();
-        PH.clear();
-        HH.clear();
-
-    //only when g.edges is sorted
-        reEegeId.resize(g.m/2);
-        for(ui i = 0; i < g.m/2; i++) {
-            ui u = g.edges[i].first;
-            ui v = g.edges[i].second;
-            u = g.mp2[u];
-            v = g.mp2[v];
-            if(u > v) std::swap(u, v);
-
-            auto st = pOEdge.begin() + pOIdx[u];
-            auto ed = pOEdge.begin() + pOIdx[u + 1];
-            ui idx = std::lower_bound(st, ed, v) - pOEdge.begin(); 
-
-            reEegeId[i] = idx;
-        }
-
-        printf("plexLocal.h\n");
-    }
+    plexLocal(Graph && g, ui k, ui q);
     ~plexLocal() {
         if(bf3 == nullptr) {
             delete [] bf3;

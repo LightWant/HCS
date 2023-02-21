@@ -220,29 +220,29 @@ kPList.cpp.s:
 	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/kPList.dir/build.make src/plex/CMakeFiles/kPList.dir/kPList.cpp.s
 .PHONY : kPList.cpp.s
 
-plexCountingV4.o: plexCountingV4.cpp.o
-.PHONY : plexCountingV4.o
+plexCountingV6.o: plexCountingV6.cpp.o
+.PHONY : plexCountingV6.o
 
 # target to build an object file
-plexCountingV4.cpp.o:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV4.cpp.o
-.PHONY : plexCountingV4.cpp.o
+plexCountingV6.cpp.o:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV6.cpp.o
+.PHONY : plexCountingV6.cpp.o
 
-plexCountingV4.i: plexCountingV4.cpp.i
-.PHONY : plexCountingV4.i
+plexCountingV6.i: plexCountingV6.cpp.i
+.PHONY : plexCountingV6.i
 
 # target to preprocess a source file
-plexCountingV4.cpp.i:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV4.cpp.i
-.PHONY : plexCountingV4.cpp.i
+plexCountingV6.cpp.i:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV6.cpp.i
+.PHONY : plexCountingV6.cpp.i
 
-plexCountingV4.s: plexCountingV4.cpp.s
-.PHONY : plexCountingV4.s
+plexCountingV6.s: plexCountingV6.cpp.s
+.PHONY : plexCountingV6.s
 
 # target to generate assembly for a file
-plexCountingV4.cpp.s:
-	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV4.cpp.s
-.PHONY : plexCountingV4.cpp.s
+plexCountingV6.cpp.s:
+	cd /home/yexw/maximalKPlex && $(MAKE) $(MAKESILENT) -f src/plex/CMakeFiles/plexCounting.dir/build.make src/plex/CMakeFiles/plexCounting.dir/plexCountingV6.cpp.s
+.PHONY : plexCountingV6.cpp.s
 
 plexEnumerator4.o: plexEnumerator4.cpp.o
 .PHONY : plexEnumerator4.o
@@ -286,9 +286,9 @@ help:
 	@echo "... kPList.o"
 	@echo "... kPList.i"
 	@echo "... kPList.s"
-	@echo "... plexCountingV4.o"
-	@echo "... plexCountingV4.i"
-	@echo "... plexCountingV4.s"
+	@echo "... plexCountingV6.o"
+	@echo "... plexCountingV6.i"
+	@echo "... plexCountingV6.s"
 	@echo "... plexEnumerator4.o"
 	@echo "... plexEnumerator4.i"
 	@echo "... plexEnumerator4.s"

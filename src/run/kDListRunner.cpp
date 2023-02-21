@@ -10,7 +10,7 @@ void printUsage() {
     std::cout << "-f graph file directory(edge.bin & idx.bin)" << std::endl;
     std::cout << "-f_txt graph file text file, each edge exists one time" << std::endl;
     std::cout << "-f_txtD graph file text file, each edge exists two times" << std::endl;
-    std::cout << "-k" << std::endl;
+    std::cout << "-s" << std::endl;
     std::cout << "-q" << std::endl;
 }
 

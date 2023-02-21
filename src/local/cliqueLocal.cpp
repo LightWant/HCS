@@ -107,11 +107,11 @@ printf("HH:"); for(auto i : HH) printf("%u ", i); printf("\n");
 #endif
 
     auto updateAns = [&]() {
-        if(k >= h+2)
+        if(k >= h+2 && p >= 2)
         for(auto i : PP) {
             answers[i] += CN[p-2][k-h-2];
         }
-        if(k >= h+1)
+        if(k >= h+1 && p >= 1)
         for(auto i : PH) answers[i] += CN[p-1][k-h-1];
         for(auto i : HH) answers[i] += CN[p][k-h];
     };
@@ -281,7 +281,7 @@ deep--;
 cliqueLocal::cliqueLocal(Graph && g, ui k) :g(g), k(k) { 
     C.resize(g.n);
 
-    maxSize = g.coreNumber + 1;
+    maxSize = g.coreNumber + 10;
     maxK = k + 1;
     answers.resize(g.m / 2);
 
