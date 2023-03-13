@@ -1,0 +1,22 @@
+data/randomGraphs/wikrr_95
+load graph: n 7115 m 191266 maxD 927
+changeToCoreOrder:5ms
+coreNumber:50
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:5899ms
+5-sdc:30122999
+6-sdc:43951928
+7-sdc:52891202
+8-sdc:50454444
+9-sdc:37265248
+10-sdc:20956549
+11-sdc:8851511
+12-sdc:2773319
+13-sdc:636219
+14-sdc:104804
+15-sdc:11857
+16-sdc:834
+17-sdc:33
+18-sdc:1

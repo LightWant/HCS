@@ -1,0 +1,5 @@
+data/amazon/amazon0601.edges
+load graph: n 2443409 m 4886818 maxD 2752
+sdcLocal::sdcVLocal
+sdcVLocal.cpp::run
+time:1147ms

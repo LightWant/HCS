@@ -64,6 +64,7 @@ preSizeOfCandidate += g.pIdx[u + 1] - g.pIdx2[u];
                 que[rq++] = v;
             }
         }
+        if(q>3)
         while(lq < rq) {
             ui v = que[lq++];
 

@@ -1,0 +1,9 @@
+data/pokec/data.txt
+load graph: n 1632803 m 44603928 maxD 14854
+changeToCoreOrder:2068ms
+s:3 q:30 Q:30
+plexCounting
+plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
+init Hash
+time:4857ms
+30-plex:14182

@@ -1,0 +1,16 @@
+data/coama/a0601.txt
+load graph: n 403394 m 4886816 maxD 2752
+changeToCoreOrder:169ms
+coreNumber:10
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:1881ms
+5-sdc:15380375
+6-sdc:8696199
+7-sdc:3855807
+8-sdc:1279261
+9-sdc:302157
+10-sdc:46901
+11-sdc:4067
+12-sdc:124

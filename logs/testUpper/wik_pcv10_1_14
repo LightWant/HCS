@@ -1,0 +1,9 @@
+data/Wiki-Vote.txt
+load graph: n 7115 m 201524 maxD 1065
+changeToCoreOrder:5ms
+s:1 q:14 Q:14
+plexCounting
+plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
+init Hash
+time:3694ms
+14-plex:21831448

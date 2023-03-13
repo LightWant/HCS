@@ -1,0 +1,14 @@
+data/coama/a0302.txt
+load graph: n 262111 m 1799584 maxD 420
+changeToCoreOrder:52ms
+coreNumber:6
+k:50
+pivoter.h
+pivoter.cpp::run
+branches:683732
+time:67ms
+3-clique:717719
+4-clique:304441
+5-clique:67942
+6-clique:6267
+7-clique:15

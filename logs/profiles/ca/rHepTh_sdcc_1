@@ -1,0 +1,8 @@
+data/ca/rHepTh.txt
+load graph: n 68745 m 52162 maxD 68
+changeToCoreOrder:2ms
+coreNumber:6
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:2ms

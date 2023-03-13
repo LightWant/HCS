@@ -1,0 +1,24 @@
+data/eronEmail/rdata.txt
+load graph: n 36691 m 367010 maxD 1309
+changeToCoreOrder:9ms
+coreNumber:41
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:2612ms
+5-sdc:39461988
+6-sdc:111270072
+7-sdc:298106224
+8-sdc:709702227
+9-sdc:1471234834
+10-sdc:2644047481
+11-sdc:4121707797
+12-sdc:5581720044
+13-sdc:6573675948
+14-sdc:6733585485
+15-sdc:5992628503
+16-sdc:4622497525
+17-sdc:3078396991
+18-sdc:1759948250
+19-sdc:857083404
+20-sdc:351854362

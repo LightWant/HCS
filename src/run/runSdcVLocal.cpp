@@ -36,11 +36,17 @@ int main(int argc, char * argv[])
     else g.readFromBin(ac["-f"]);
 
 
-    std::cout << "load graph: n " << g.n << " m " << g.m << " maxD " << g.maxD << std::endl;
+    // std::cout << "load graph: n " << g.n << " m " << g.m << " maxD " << g.maxD << std::endl;
 
     auto s1 = std::chrono::steady_clock::now();
 
     g.changeToCoreOrder();
+    // ui co = 0;
+    // for(ui i = 0; i < g.n; i++) {
+    //     co = std::max(co, g.pIdx[i+1]-g.pIdx2[i]);
+    //     printf("%u ", co);
+    // }
+    // return 0;
     // for(ui i = 0; i < g.n; i++) assert(g.pIdx[i+1] - g.pIdx2[i] <= g.coreNumber);
 
     auto s2 = std::chrono::steady_clock::now();

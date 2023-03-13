@@ -1,0 +1,16 @@
+load graph: n 26475 m 106762 maxD 2628
+changeToCoreOrder:4ms
+k:2 q:3
+kPlist
+kPList::run
+init Hash
+time:36322ms
+answer:14833540data/as-caida2007.txt
+load graph: n 26475 m 106762 maxD 2628
+changeToCoreOrder:3ms
+k:2 q:3
+kPlist
+kPList::run
+init Hash
+time:36381ms
+answer:14833540

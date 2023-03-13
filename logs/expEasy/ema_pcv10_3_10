@@ -1,0 +1,9 @@
+data/Email-EuAll.txt
+load graph: n 265009 m 728960 maxD 7636
+changeToCoreOrder:19ms
+s:3 q:10 Q:10
+plexCounting
+plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
+init Hash
+time:14966751ms
+10-plex:58663101484

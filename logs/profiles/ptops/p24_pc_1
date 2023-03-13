@@ -1,0 +1,11 @@
+data/ptops/p24.txt
+load graph: n 26518 m 130738 maxD 355
+changeToCoreOrder:3ms
+s:1 q:3 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:262ms
+3-plex:719234
+4-plex:8772
+5-plex:10

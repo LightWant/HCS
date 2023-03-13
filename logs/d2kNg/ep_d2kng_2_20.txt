@@ -1,0 +1,9 @@
+data/soc-Epinions.txt
+load graph: n 75879 m 811480 maxD 3044
+changeToCoreOrder:22ms
+k:2 q:20
+dk2
+d2kng
+init Hash
+time:18463ms
+Maximal K-Plex Count: 3322167

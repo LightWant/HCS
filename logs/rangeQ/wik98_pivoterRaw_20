@@ -1,0 +1,23 @@
+data/sampled/wik98.txt
+load graph: n 7115 m 197578 maxD 1051
+changeToCoreOrder:7ms
+coreNumber:52
+k:20
+pivoter.h
+pivoter.cpp::run
+branches:757217
+time:77ms
+3-clique:573271
+4-clique:1850824
+5-clique:3738969
+6-clique:5227120
+7-clique:5421107
+8-clique:4349683
+9-clique:2740239
+10-clique:1346769
+11-clique:506315
+12-clique:141060
+13-clique:27668
+14-clique:3495
+15-clique:238
+16-clique:5

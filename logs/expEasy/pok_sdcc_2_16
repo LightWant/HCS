@@ -1,0 +1,9 @@
+data/pokec/data.txt
+load graph: n 1632803 m 44603928 maxD 14854
+changeToCoreOrder:2030ms
+coreNumber:47
+s:2 q:16 Q:16
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:19264ms
+16-sdc:1947139253

@@ -1,0 +1,22 @@
+data/randomGraphs/wik80.txt
+load graph: n 7115 m 160432 maxD 821
+changeToCoreOrder:5ms
+coreNumber:42
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:2430ms
+5-sdc:10220672
+6-sdc:11436894
+7-sdc:11419700
+8-sdc:9864364
+9-sdc:7250297
+10-sdc:4471505
+11-sdc:2281950
+12-sdc:948777
+13-sdc:315363
+14-sdc:81728
+15-sdc:15921
+16-sdc:2193
+17-sdc:188
+18-sdc:7

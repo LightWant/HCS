@@ -1,0 +1,18 @@
+data/amazon/amazon0601.edges
+load graph: n 2443409 m 4886818 maxD 2752
+changeToCoreOrder:193ms
+s:1 q:3 Q:50
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:169797ms
+3-plex:64236673
+4-plex:26819473
+5-plex:18514895
+6-plex:11138947
+7-plex:5269487
+8-plex:1877692
+9-plex:482171
+10-plex:83304
+11-plex:8513
+12-plex:371

@@ -1,0 +1,9 @@
+data/Email-EuAll.txt
+load graph: n 265009 m 728960 maxD 7636
+changeToCoreOrder:19ms
+coreNumber:37
+s:2 q:9 Q:9
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:8678ms
+9-sdc:67132437

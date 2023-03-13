@@ -1,0 +1,27 @@
+data/eronEmail/ero.txt
+load graph: n 36692 m 367662 maxD 1383
+changeToCoreOrder:9ms
+coreNumber:43
+k:50
+pivoter.h
+pivoter.cpp::run
+branches:503470
+time:61ms
+3-clique:727044
+4-clique:2341639
+5-clique:5809356
+6-clique:11213163
+7-clique:16985090
+8-clique:20318270
+9-clique:19291746
+10-clique:14604335
+11-clique:8860699
+12-clique:4342925
+13-clique:1742316
+14-clique:582977
+15-clique:165718
+16-clique:40130
+17-clique:8019
+18-clique:1222
+19-clique:123
+20-clique:6

@@ -1,0 +1,20 @@
+data/sampled/wik95.txt
+load graph: n 7115 m 191464 maxD 1020
+changeToCoreOrder:5ms
+coreNumber:50
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:9023ms
+5-sdc:37897474
+6-sdc:44678255
+7-sdc:40107556
+8-sdc:28428975
+9-sdc:16115256
+10-sdc:7209773
+11-sdc:2465650
+12-sdc:613194
+13-sdc:102756
+14-sdc:10258
+15-sdc:491
+16-sdc:5

@@ -14,7 +14,7 @@ ull kplist::run() {
 #ifdef DDDEBUG
 g.print();
 #endif
-    printf("kPList::run\n");
+    printf("kPList v2::run\n");
 
     g.initHash();
     printf("init Hash\n");
@@ -23,14 +23,20 @@ g.print();
 #ifdef DDDEBUG
 std::cout<<"    start "<<u<<' '<<answer<<std::endl;
 #endif
+// if(u % 1000 == 0) {
+//     printf("%u\n", u);fflush(stdout);
+// }
         //P is empty
         //X is 2-hop neighbors < u
         //C is 2-hop neighbors > u
         if(g.pIdx[u + 1] - g.pIdx2[u] + k < q) continue;
         std::vector<ui> C;
-        P.clear(); C.clear();
+        // P.clear(); 
+        edP = 0;
+        C.clear();
 
-        P.push_back(u);
+        // P.push_back(u);
+        P.changeTo(u, edP++);
         level[u] = 1;
         nn.addNonNei(u, u);
 
@@ -195,7 +201,7 @@ for(auto v:C) {
 //     assert(C.size() <= k*g.coreNumber);
 // }
 
-    if(P.size() == q - 1) {
+    if(edP == q - 1) {
 #ifdef DDDEBUG
 printf("ans+%u\n", C.size());
 #endif
@@ -210,7 +216,7 @@ for(auto v: C) {
         return;
     }
 
-    if(C.size() + P.size() < q) {
+    if(C.size() + edP < q) {
 #ifdef DDDEBUG
 printf("C+P<q, %u %u %u\n", C.size(), P.size(), q);
 #endif
@@ -228,22 +234,29 @@ printf("C+P<q, %u %u %u\n", C.size(), P.size(), q);
             }
         }
         
-        if(support.size() < P.size()) support.resize(P.size() * 2+1);
+        if(support.size() < edP) support.resize(edP * 2+1);
         ui s = 0;
-        for(ui j = 0; j < P.size(); j++) {
+        for(ui j = 0; j < edP; j++) {
             support[j] = k - nn.getCntNonNei(P[j]);
             s += k - nn.getCntNonNei(P[j]);
         }
-        ui up = P.size() + k - nn.getCntNonNei(v) + bucket[0].size();
+        ui up = edP + k - nn.getCntNonNei(v) + bucket[0].size();
         for(ui j = 1; j < k; j++) {
             for(auto u: bucket[j]) {
                 ui minJ = 0, minS = k + 1;
-                for(ui l = 0; l < P.size(); l++) {
-                    if(!g.connectHash(u, P[l])) {
-                        if(support[l] < minS) {
-                            minJ = l;
-                            minS = support[l];
-                        }
+                // for(ui l = 0; l < P.size(); l++) {
+                //     if(!g.connectHash(u, P[l])) {
+                //         if(support[l] < minS) {
+                //             minJ = l;
+                //             minS = support[l];
+                //         }
+                //     }
+                // }
+                for(ui ll = 0, ct = nn.getCntNonNei(u); ll < ct; ll++) {
+                    ui l = P.idx(nn.buffer[u*k+ll]);
+                    if(support[l] < minS) {
+                        minJ = l;
+                        minS = support[l];
                     }
                 }
 
@@ -267,7 +280,8 @@ printf("C+P<q, %u %u %u\n", C.size(), P.size(), q);
 
         if(upPrune(i, u)) continue;
 
-        P.push_back(u);
+        // P.push_back(u);
+        P.changeTo(u, edP++);
         level[u] = deep + 1;
         nn.addNonNei(u, u);
 #ifdef DDDEBUG
@@ -324,7 +338,8 @@ printf("    deep %u, cand %u\n", deep, u);
         
         if(newC.size()) listing(deep + 1, newC);
 
-        P.pop_back();
+        // P.pop_back();
+        edP--;
         // nn.pop(u);
         level[u] = deep;
         for(ui j = 0, cntNN = nn.getCntNonNei(u); j < cntNN; j++) {

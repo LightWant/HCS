@@ -1,0 +1,27 @@
+data/soc-Epinions.txt
+load graph: n 75879 m 811480 maxD 3044
+changeToCoreOrder:21ms
+coreNumber:67
+k:20
+pivoter.h
+pivoter.cpp::run
+branches:3368387
+time:345ms
+3-clique:1624481
+4-clique:5803397
+5-clique:17417432
+6-clique:45703641
+7-clique:104164178
+8-clique:202460776
+9-clique:331299742
+10-clique:453092709
+11-clique:515393208
+12-clique:485472137
+13-clique:376766712
+14-clique:239370825
+15-clique:123441313
+16-clique:51084931
+17-clique:16709526
+18-clique:4233285
+19-clique:808444
+20-clique:112120

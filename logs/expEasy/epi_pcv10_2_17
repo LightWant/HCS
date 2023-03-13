@@ -1,0 +1,9 @@
+data/soc-Epinions.txt
+load graph: n 75879 m 811480 maxD 3044
+changeToCoreOrder:22ms
+s:2 q:17 Q:17
+plexCounting
+plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
+init Hash
+time:12645556ms
+17-plex:2436555238104

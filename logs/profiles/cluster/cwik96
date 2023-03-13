@@ -1,0 +1,22 @@
+data/wik/wik96.txt
+load graph: n 7115 m 193590 maxD 1025
+changeToCoreOrder:7ms
+coreNumber:51
+k:50
+pivoter.h
+pivoter.cpp::run
+branches:712607
+time:72ms
+3-clique:539057
+4-clique:1633186
+5-clique:3037214
+6-clique:3872652
+7-clique:3665576
+8-clique:2694787
+9-clique:1556887
+10-clique:700607
+11-clique:240855
+12-clique:61198
+13-clique:10830
+14-clique:1190
+15-clique:61

@@ -1,0 +1,20 @@
+load graph: n 26475 m 106762 maxD 2628
+changeToCoreOrder:4ms
+coreNumber:22
+k:2 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DP.cpp::runinit Hash
+time:2447ms
+5-sdc:10202925
+6-sdc:5930679
+7-sdc:4246557
+8-sdc:2917111
+9-sdc:1833089
+10-sdc:988974
+11-sdc:433771
+12-sdc:150694
+13-sdc:40784
+14-sdc:8261
+15-sdc:1142
+16-sdc:91
+17-sdc:3

@@ -1,0 +1,25 @@
+data/randomGraphs/wik85.txt
+load graph: n 7114 m 171506 maxD 884
+changeToCoreOrder:4ms
+coreNumber:45
+k:20
+pivoter.h
+pivoter.cpp::run
+branches:216881
+time:25ms
+3-clique:292400
+4-clique:666011
+5-clique:1268283
+6-clique:2015951
+7-clique:2630615
+8-clique:2792627
+9-clique:2398264
+10-clique:1655378
+11-clique:910165
+12-clique:393897
+13-clique:132092
+14-clique:33607
+15-clique:6295
+16-clique:828
+17-clique:70
+18-clique:3

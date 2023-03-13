@@ -1,0 +1,13 @@
+data/my/6.txt
+load graph: n 500 m 74976 maxD 184
+changeToCoreOrder:3ms
+k:2 q:6 Q:20
+plexCounting
+plexCountingV4.cpp::run
+init Hash
+time:51082ms
+6-plex:146566033
+7-plex:32036229
+8-plex:2206708
+9-plex:39800
+10-plex:222

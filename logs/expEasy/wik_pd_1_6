@@ -1,0 +1,9 @@
+data/Wiki-Vote.txt
+load graph: n 7115 m 201524 maxD 1065
+changeToCoreOrder:9ms
+s:1 q:6
+kDlist.h
+kDList.cpp
+init Hash
+time:11510ms
+answer:84834682

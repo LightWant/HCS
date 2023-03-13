@@ -1,0 +1,9 @@
+data/Wiki-Vote.txt
+load graph: n 7115 m 201524 maxD 1065
+changeToCoreOrder:5ms
+s:2 q:6 Q:6
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:3234223ms
+6-plex:11181011337

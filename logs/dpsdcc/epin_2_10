@@ -1,0 +1,19 @@
+data/soc-Epinions.txt
+load graph: n 75879 m 811480 maxD 3044
+changeToCoreOrder:20ms
+coreNumber:67
+k:2 q:10 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DP.cpp::runinit Hash
+time:455000ms
+10-sdc:20938280393
+11-sdc:26612971261
+12-sdc:28770493207
+13-sdc:26166853733
+14-sdc:19829260687
+15-sdc:12399328472
+16-sdc:6327325459
+17-sdc:2598843493
+18-sdc:843817889
+19-sdc:211415155
+20-sdc:39546626

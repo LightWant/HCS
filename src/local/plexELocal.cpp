@@ -7,7 +7,7 @@
 #endif
 
 void plexLocal::run() {
-    printf("plexELocal::run\n");
+    printf("plexELocalv10::run\n");
 #ifdef DDDEBUG
 g.print();
 #endif
@@ -281,25 +281,45 @@ for(ui i = 0; i < h; i++)
     ui minDPC = sg.deg[deep][C[0]] + edP - nn.getCntNonNei(C[0]);
     //find pivot in C with max degree in C
     ui maxD = sg.deg[deep][C[0]], pv = C[0];
+    bool isPivot = false;
 // ui nonNeiOfPv = nn.getCntNonNei(C[0]);
     for(ui i = 1; i < edC; i++) {
         ui v = C[i];
         ui d = sg.degreeDeep(deep, v);
         
         minDPC = std::min(minDPC, d + edP - nn.getCntNonNei(v));
-// ui nonNei = nn.getCntNonNei(v);
+        ui nonNei = nn.getCntNonNei(v);
 
-// if(nonNeiOfPv == 0) {
-//     if(nonNei == 0 && d > maxD) {
-//         maxD = d;
-//         pv = v;
-//     }
-// }
-// else 
-        if(d > maxD) {
+        bool canServeAsPivot = true;
+        for(ui j = 0; j < nonNei; j++) {
+            ui w = nn.buffer[v*k + j];
+            ui degWInC = sg.deg[deep][w];
+            if(edC - degWInC + nn.getCntNonNei(w) > k) {
+                canServeAsPivot = false;
+                break;
+            }
+        }
+
+        if(canServeAsPivot) {
+#ifdef DDDEBUG
+printf("canServeAsP : %u\n", v);
+#endif
+            if(isPivot) {
+                if(d > maxD) {
+                    maxD = d;
+                    pv = v;
+                }
+            }
+            else {
+                isPivot = true;
+                maxD = d;
+                pv = v;
+            }
+        }
+        else if(isPivot == false && d > maxD){
             maxD = d;
             pv = v;
-// nonNeiOfPv = nonNei;
+            // nonNeiOfPv = nonNei;
         }
     }
 
@@ -347,45 +367,19 @@ printf(" P+C!; minDPC %u\n", minDPC);
     std::vector<ui> cand(edC);
     ui candSize = 0;
     
-    bool isP = true;
     ui countOfNonNeihborOfPv = nn.getCntNonNei(pv);
-    ui C1Size = 0, C2Size = 0;
+    ui C1Size = 0;
     for(ui j = 0; j < edC; j++) { 
         ui v = C[j];
         if(v == pv) continue;
         if(g.connectHash(pv, v)) {
-            // if(hasCommenNonNeighbor(pv, v)) cand[candSize++] = v;
-            // bool isInC1 = true;
-            for(ui i = 0; i < countOfNonNeihborOfPv; i++) {
-                ui w = nn.buffer[pv*k + i];
-                if(!g.connectHash(v, w)) {
-                    // cand[candSize++] = v;
-                    C2Size++;
-                    // isInC1 = false;
-                    break;
-                }
-            }
-            // if(isInC1) 
             C.changeToByPos(j, C1Size++);
-            // if(isInC1) C1Size++;
         }
         else {
-            // if(canAdd(v)) C2Size++;
-            // if(countOfNonNeihborOfPv+1 < k && nn.getCntNonNei(v)+1 < k) {
-            //     bool canAdd = true;
-            //     for(ui i = 0; i < countOfNonNeihborOfPv; i++) {
-            //         ui w = nn.buffer[pv*k + i];
-            //         if(nn.getCntNonNei(w)+1 == k && !g.connectHash(v, w)) {
-            //             canAdd = false;
-            //         }
-            //     }
-            //     if(canAdd) C2Size++;
-            // }
-            
             cand[candSize++] = v;
         }
     }
-    if(C2Size > 0) cand[candSize++] = pv;
+    if(!isPivot) cand[candSize++] = pv;
 #ifdef DDDEBUG
 printf("pv: %u", pv);
 printf("cand:");
@@ -481,7 +475,7 @@ for(ui i = 0; i < candSize; i++) printf("%u ", cand[i]);printf("\n");
     
 //和pv没有公共非邻居的点，不用枚举
     
-    if(C2Size == 0) {
+    if(isPivot) {
 #ifdef DDDEBUG
 printf("C2size == 0\n");
 #endif
@@ -533,12 +527,19 @@ printf("C2size != 0\n");
         for(ui j = 1; j < k; j++) {
             for(auto u: bucket[j]) {
                 ui minJ = 0, minS = k + 1;
-                for(ui l = 0; l < edP; l++) {
-                    if(!g.connectHash(u, P[l])) {
-                        if(support[l] < minS) {
-                            minJ = l;
-                            minS = support[l];
-                        }
+                // for(ui l = 0; l < edP; l++) {
+                //     if(!g.connectHash(u, P[l])) {
+                //         if(support[l] < minS) {
+                //             minJ = l;
+                //             minS = support[l];
+                //         }
+                //     }
+                // }
+                for(ui ll = 0, ct = nn.getCntNonNei(u); ll < ct; ll++) {
+                    ui l = P.idx(nn.buffer[u*k+ll]);
+                    if(support[l] < minS) {
+                        minJ = l;
+                        minS = support[l];
                     }
                 }
 // assert(minS < k + 1);

@@ -1,0 +1,9 @@
+load graph: n 403394 m 4886816 maxD 2752
+changeToCoreOrder:93ms
+coreNumber:10
+s:1 q:8 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+preSizeOfCandidate:9931166
+nowSizeOfCandidate:666993
+time:321ms

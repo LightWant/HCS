@@ -1,0 +1,9 @@
+data/coama/ra0601.txt
+load graph: n 403394 m 4883716 maxD 2779
+changeToCoreOrder:186ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:469ms
+5-plex:29

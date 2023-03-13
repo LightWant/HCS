@@ -1,0 +1,10 @@
+data/dblp.txt
+load graph: n 425957 m 2099732 maxD 343
+changeToCoreOrder:69ms
+s:1 q:10 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+preSizeOfCandidate:3615689
+nowSizeOfCandidate:150461
+time:93ms

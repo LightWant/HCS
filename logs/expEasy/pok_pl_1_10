@@ -1,0 +1,9 @@
+data/pokec/data.txt
+load graph: n 1632803 m 44603928 maxD 14854
+changeToCoreOrder:2018ms
+s:1 q:10
+kPlist
+kPList::run
+init Hash
+time:468216ms
+answer:3157292113

@@ -1,0 +1,9 @@
+data/Email-EuAll.txt
+load graph: n 265009 m 728960 maxD 7636
+changeToCoreOrder:18ms
+s:1 q:10 Q:10
+plexCounting
+plexCountingV9.cpp::run fast upper bound
+init Hash
+time:2140ms
+10-plex:45286215

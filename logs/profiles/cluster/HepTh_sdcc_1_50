@@ -1,0 +1,38 @@
+data/ca/HepTh.txt
+load graph: n 68745 m 51946 maxD 65
+changeToCoreOrder:5ms
+coreNumber:31
+s:1 q:3 Q:50
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:47ms
+3-sdc:242678
+4-sdc:101053
+5-sdc:286671
+6-sdc:1124742
+7-sdc:3879239
+8-sdc:11532963
+9-sdc:29742628
+10-sdc:66918591
+11-sdc:131948922
+12-sdc:228841314
+13-sdc:350100366
+14-sdc:473524764
+15-sdc:567088364
+16-sdc:601837179
+17-sdc:566074980
+18-sdc:471571545
+19-sdc:347416315
+20-sdc:225803487
+21-sdc:129026505
+22-sdc:64512516
+23-sdc:28048824
+24-sdc:10518301
+25-sdc:3365856
+26-sdc:906192
+27-sdc:201376
+28-sdc:35960
+29-sdc:4960
+30-sdc:496
+31-sdc:32
+32-sdc:1

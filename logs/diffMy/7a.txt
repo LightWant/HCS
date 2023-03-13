@@ -1,0 +1,4 @@
+data/my/7.txt
+load graph: n 500 m 74634 maxD 178
+changeToCoreOrder:4ms
+k:2 q:6 Q:20

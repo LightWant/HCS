@@ -1,0 +1,9 @@
+data/dblp.txt
+load graph: n 425957 m 2099732 maxD 343
+changeToCoreOrder:68ms
+s:1 q:9
+kDlist.h
+kDList.cpp
+init Hash
+time:162301372ms
+answer:8846924153135

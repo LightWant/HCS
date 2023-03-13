@@ -1,0 +1,25 @@
+data/ca/rrHepTh.txt
+load graph: n 9875 m 62086 maxD 116
+changeToCoreOrder:1ms
+coreNumber:31
+s:1 q:4 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:36ms
+4-sdc:349092
+5-sdc:1314808
+6-sdc:4849840
+7-sdc:15496189
+8-sdc:42304593
+9-sdc:98596550
+10-sdc:197028267
+11-sdc:340053025
+12-sdc:511314399
+13-sdc:676052177
+14-sdc:793373279
+15-sdc:833617993
+16-sdc:789816073
+17-sdc:677657418
+18-sdc:526847637
+19-sdc:369992367
+20-sdc:233274431

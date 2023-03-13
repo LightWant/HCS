@@ -1,0 +1,10 @@
+load graph: n 403394 m 4886816 maxD 2752
+changeToCoreOrder:92ms
+s:2 q:8 Q:20
+plexCounting
+plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
+testcand!
+init Hash
+preSizeOfCandidate:33429048
+nowSizeOfCandidate:2637858
+time:1635ms

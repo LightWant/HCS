@@ -1,0 +1,9 @@
+data/pokec/data.txt
+load graph: n 1632803 m 44603928 maxD 14854
+changeToCoreOrder:2052ms
+s:3 q:27 Q:27
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:57275ms
+27-plex:31158734

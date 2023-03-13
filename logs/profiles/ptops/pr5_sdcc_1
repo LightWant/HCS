@@ -1,0 +1,10 @@
+data/ptops/pr5.txt
+load graph: n 8845 m 63748 maxD 93
+changeToCoreOrder:2ms
+coreNumber:7
+s:1 q:3 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:88ms
+3-sdc:475433
+4-sdc:149

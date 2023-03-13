@@ -1,0 +1,8 @@
+load graph: n 1696415 m 22190596 maxD 35455
+changeToCoreOrder:416ms
+s:1 q:90
+kDlist.h
+kDList.cpp
+init Hash
+time:3545ms
+answer:0

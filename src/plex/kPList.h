@@ -3,6 +3,7 @@
 
 #include "../graph/graph.h"
 #include "../tools/types.hpp"
+#include "../tools/linearSet.hpp"
 #include <vector>
 #include <cassert>
 
@@ -39,7 +40,9 @@ private:
     Graph g, sg;
     ui k = 0, q = 0;
     
-    std::vector<ui> P;
+    //std::vector<ui> P;
+    LinearSet P;
+    ui edP = 0;
     std::vector<ui> level;
     nonNeiMatainer nn;//non-neighbors
     ull answer = 0;

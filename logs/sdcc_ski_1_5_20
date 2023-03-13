@@ -1,0 +1,6 @@
+load graph: n 1696415 m 22190596 maxD 35455
+changeToCoreOrder:428ms
+coreNumber:111
+k:1 q:5 Q:20
+sdcCounting2::sdcCounting
+sdcCounting2.cpp::runinit Hash

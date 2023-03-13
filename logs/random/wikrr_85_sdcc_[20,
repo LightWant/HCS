@@ -1,0 +1,6 @@
+bin/run 
+-f graph file directory(edge.bin & idx.bin)
+-f_txt graph file text file, each edge exists one time
+-f_txtD graph file text file, each edge exists two times
+-s
+-q

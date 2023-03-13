@@ -1,0 +1,9 @@
+data/Email-EuAll.txt
+load graph: n 265009 m 728960 maxD 7636
+changeToCoreOrder:18ms
+s:1 q:13
+kDlist.h
+kDList.cpp
+init Hash
+time:481ms
+answer:155882

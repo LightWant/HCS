@@ -1,0 +1,9 @@
+data/as-caida2007.txt
+load graph: n 26475 m 106762 maxD 2628
+changeToCoreOrder:3ms
+k:2 q:4
+kPlist
+kPList::run
+init Hash
+time:1631ms
+answer:2179599

@@ -1,0 +1,38 @@
+data/ca/HepTh.txt
+load graph: n 68745 m 51946 maxD 65
+changeToCoreOrder:2ms
+s:1 q:3 Q:50
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:93ms
+3-plex:242678
+4-plex:107897
+5-plex:289257
+6-plex:1125273
+7-plex:3879271
+8-plex:11532964
+9-plex:29742628
+10-plex:66918591
+11-plex:131948922
+12-plex:228841314
+13-plex:350100366
+14-plex:473524764
+15-plex:567088364
+16-plex:601837179
+17-plex:566074980
+18-plex:471571545
+19-plex:347416315
+20-plex:225803487
+21-plex:129026505
+22-plex:64512516
+23-plex:28048824
+24-plex:10518301
+25-plex:3365856
+26-plex:906192
+27-plex:201376
+28-plex:35960
+29-plex:4960
+30-plex:496
+31-plex:32
+32-plex:1

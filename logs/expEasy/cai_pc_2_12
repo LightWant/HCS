@@ -1,0 +1,8 @@
+load graph: n 26475 m 106762 maxD 2628
+changeToCoreOrder:3ms
+s:2 q:12 Q:12
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:2014ms
+12-plex:6562449

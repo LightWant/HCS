@@ -1,0 +1,12 @@
+data/ptops/p8.txt
+load graph: n 6301 m 41554 maxD 97
+changeToCoreOrder:0ms
+coreNumber:10
+s:1 q:3 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:78ms
+3-sdc:341267
+4-sdc:14947
+5-sdc:279
+6-sdc:2

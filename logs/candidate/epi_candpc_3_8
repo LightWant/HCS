@@ -1,0 +1,11 @@
+data/soc-Epinions.txt
+load graph: n 75879 m 811480 maxD 3044
+changeToCoreOrder:21ms
+s:3 q:8 Q:20
+plexCounting
+plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
+testcand!
+init Hash
+preSizeOfCandidate:57003228
+nowSizeOfCandidate:9419253
+time:54156ms

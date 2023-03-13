@@ -1,0 +1,24 @@
+data/randomGraphs/epi.txt
+load graph: n 75879 m 810586 maxD 2813
+changeToCoreOrder:21ms
+coreNumber:57
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:13965ms
+5-sdc:95222285
+6-sdc:197809477
+7-sdc:397946419
+8-sdc:730696524
+9-sdc:1193543263
+10-sdc:1713371988
+11-sdc:2148156544
+12-sdc:2343945015
+13-sdc:2220604173
+14-sdc:1822673593
+15-sdc:1292700829
+16-sdc:789083791
+17-sdc:412084040
+18-sdc:182493125
+19-sdc:67671716
+20-sdc:20642360

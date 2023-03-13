@@ -1,0 +1,18 @@
+data/coama/a0601.txt
+load graph: n 403394 m 4886816 maxD 2752
+changeToCoreOrder:168ms
+coreNumber:10
+k:50
+pivoter.h
+pivoter.cpp::run
+branches:2065421
+time:281ms
+3-clique:3986507
+4-clique:4420994
+5-clique:3606466
+6-clique:2193997
+7-clique:988617
+8-clique:321706
+9-clique:71668
+10-clique:9771
+11-clique:610

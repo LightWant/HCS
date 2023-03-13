@@ -1,0 +1,9 @@
+data/soc-Epinions.txt
+load graph: n 75879 m 811480 maxD 3044
+changeToCoreOrder:21ms
+s:1 q:6
+kDlist.h
+kDList.cpp
+init Hash
+time:43481ms
+answer:393788132

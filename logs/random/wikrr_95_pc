@@ -1,0 +1,23 @@
+data/randomGraphs/wikrr_95
+load graph: n 7115 m 191266 maxD 927
+changeToCoreOrder:5ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:23575ms
+5-plex:70618366
+6-plex:125302264
+7-plex:188776323
+8-plex:234167414
+9-plex:234456176
+10-plex:186576196
+11-plex:116228530
+12-plex:55662920
+13-plex:20014567
+14-plex:5234283
+15-plex:953435
+16-plex:113781
+17-plex:8066
+18-plex:272
+19-plex:1

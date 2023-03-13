@@ -1,0 +1,22 @@
+data/sampled/wik96.txt
+load graph: n 7115 m 193376 maxD 1025
+changeToCoreOrder:6ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:38431ms
+5-plex:98420934
+6-plex:161938396
+7-plex:198615910
+8-plex:187708423
+9-plex:139345727
+10-plex:81692080
+11-plex:37490707
+12-plex:13209102
+13-plex:3474375
+14-plex:657174
+15-plex:84991
+16-plex:6952
+17-plex:313
+18-plex:6

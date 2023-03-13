@@ -1,0 +1,9 @@
+data/ca/rAstroPh.txt
+load graph: n 133277 m 397748 maxD 485
+changeToCoreOrder:13ms
+coreNumber:25
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:30ms
+5-sdc:1048

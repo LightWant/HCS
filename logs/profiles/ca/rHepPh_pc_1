@@ -1,0 +1,19 @@
+data/ca/rHepPh.txt
+load graph: n 89207 m 236718 maxD 524
+changeToCoreOrder:8ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:25635ms
+5-plex:54550009
+6-plex:71719090
+7-plex:57268050
+8-plex:30390610
+9-plex:11306756
+10-plex:3128665
+11-plex:644406
+12-plex:93777
+13-plex:8689
+14-plex:437
+15-plex:11

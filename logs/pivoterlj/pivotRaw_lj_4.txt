@@ -1,0 +1,10 @@
+load graph: n 4036538 m 69362378 maxD 14815
+changeToCoreOrder:1742ms
+coreNumber:360
+k:4
+pivoter.h
+pivoter.cpp::run
+branches:1578224873
+time:1381775ms
+3-clique:177820130
+4-clique:5216918441

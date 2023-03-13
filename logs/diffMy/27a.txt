@@ -1,0 +1,10 @@
+data/my/27.txt
+load graph: n 50 m 748 maxD 24
+changeToCoreOrder:0ms
+k:2 q:6 Q:20
+plexCounting
+plexCountingV4.cpp::run
+init Hash
+time:0ms
+6-plex:114
+7-plex:1

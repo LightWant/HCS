@@ -1,0 +1,22 @@
+data/wik/wik98.txt
+load graph: n 7115 m 197320 maxD 1041
+changeToCoreOrder:5ms
+coreNumber:52
+s:1 q:4 Q:50
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:12102ms
+4-sdc:27305033
+5-sdc:48606109
+6-sdc:65301689
+7-sdc:68262778
+8-sdc:57535953
+9-sdc:39586372
+10-sdc:21934671
+11-sdc:9559340
+12-sdc:3210746
+13-sdc:818290
+14-sdc:155611
+15-sdc:21409
+16-sdc:1961
+17-sdc:91

@@ -1,0 +1,9 @@
+load graph: n 4036538 m 69362378 maxD 14815
+changeToCoreOrder:1737ms
+coreNumber:360
+k:7
+kpivoter.h
+kpivoterSGClique.cpp::run
+branches:0
+time:29798ms
+7-clique:261109495820457

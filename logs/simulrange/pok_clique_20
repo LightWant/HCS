@@ -1,0 +1,27 @@
+data/pokec/data.txt
+load graph: n 1632803 m 44603928 maxD 14854
+changeToCoreOrder:2162ms
+coreNumber:47
+k:20
+pivoter.h
+pivoter.cpp::run
+branches:31602205
+time:9314ms
+3-clique:32557458
+4-clique:42947031
+5-clique:52831618
+6-clique:65281896
+7-clique:83896509
+8-clique:111299007
+9-clique:149174278
+10-clique:197987487
+11-clique:254990304
+12-clique:312062412
+13-clique:356085446
+14-clique:372952314
+15-clique:353958854
+16-clique:301158997
+17-clique:227652199
+18-clique:151713832
+19-clique:88505205
+20-clique:44865590

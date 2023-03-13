@@ -1,0 +1,25 @@
+data/randomGraphs/wik96.txt
+load graph: n 7115 m 193606 maxD 945
+changeToCoreOrder:5ms
+coreNumber:50
+k:20
+pivoter.h
+pivoter.cpp::run
+branches:352949
+time:41ms
+3-clique:404090
+4-clique:1119561
+5-clique:2448935
+6-clique:4261016
+7-clique:5886865
+8-clique:6465055
+9-clique:5656246
+10-clique:3949506
+11-clique:2203010
+12-clique:981511
+13-clique:348509
+14-clique:97865
+15-clique:21288
+16-clique:3416
+17-clique:362
+18-clique:19

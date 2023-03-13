@@ -1,0 +1,8 @@
+data/ptops/p5.txt
+load graph: n 8846 m 63678 maxD 88
+changeToCoreOrder:2ms
+coreNumber:9
+s:2 q:3 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:3ms

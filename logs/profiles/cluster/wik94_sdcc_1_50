@@ -1,0 +1,20 @@
+data/wik/wik94.txt
+load graph: n 7114 m 189414 maxD 1003
+changeToCoreOrder:6ms
+coreNumber:50
+s:1 q:4 Q:50
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:10666ms
+4-sdc:22610679
+5-sdc:34597382
+6-sdc:37771321
+7-sdc:29951436
+8-sdc:17825730
+9-sdc:8110307
+10-sdc:2775397
+11-sdc:680345
+12-sdc:110736
+13-sdc:10620
+14-sdc:463
+15-sdc:4

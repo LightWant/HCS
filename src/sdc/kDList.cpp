@@ -8,7 +8,7 @@
 
 // #define PRINT
 
-#define UPPER_BOUND
+// #define UPPER_BOUND
 
 #ifdef DDEBUG
 #include <iostream>
@@ -28,6 +28,9 @@ ull kdlist::run() {
 
     for(ui u = 0; u < g.n; u++) {
         std::vector<ui> C;
+if(u % 1000 == 0) {
+printf("%u\n", u);fflush(stdout);
+}
 #ifdef DDEBUG
 std::cout<<"    start "<<u<<' '<<answer<<std::endl;
 #endif
@@ -42,6 +45,7 @@ std::cout<<"    start "<<u<<' '<<answer<<std::endl;
 
             if(deg[v] < q-s-2) que.push(v);
         }
+        if(q>3)
         while(!que.empty()) {
             ui v = que.front(); que.pop();
 
@@ -82,7 +86,7 @@ std::cout<<"    start "<<u<<' '<<answer<<' ' << edC1<<std::endl;
         }
 
         for(ui i = 0; i < edC1; i++) neiInP[C[i]] = 1;
-        std::sort(C.begin(), C.end());
+        // std::sort(C.begin(), C.end());
 
         if(C.size() + 1 < q) continue;
 
@@ -90,21 +94,21 @@ std::cout<<"    start "<<u<<' '<<answer<<' ' << edC1<<std::endl;
 std::cout<<"    start "<<u<<' '<<answer<<' ' << C.size()<<std::endl;
 #endif
         //build sub-graph g
-        auto buildV = [&](ui v) {
-            sg.pIdx[v] = sg.pIdx2[v] = g.pIdx[v];
+//         auto buildV = [&](ui v) {
+//             sg.pIdx[v] = sg.pIdx2[v] = g.pIdx[v];
 
-            if(g.connectHash(v, u)) sg.pEdge[sg.pIdx2[v]++] = u;
-            for(ui i = 0; i < C.size(); i++) {
-                if(g.connectHash(v, C[i])) sg.pEdge[sg.pIdx2[v]++] = C[i];
-            }
-        };
-        for(ui i = 0; i < C.size(); i++) {
-#ifdef DDEBUG
-std::cout<<"    start "<<u<<' '<<answer<<' '<<i<<std::endl;
-#endif
-            //buildV(C[i]);
-        }
-        buildV(u);
+//             if(g.connectHash(v, u)) sg.pEdge[sg.pIdx2[v]++] = u;
+//             for(ui i = 0; i < C.size(); i++) {
+//                 if(g.connectHash(v, C[i])) sg.pEdge[sg.pIdx2[v]++] = C[i];
+//             }
+//         };
+//         for(ui i = 0; i < C.size(); i++) {
+// #ifdef DDEBUG
+// std::cout<<"    start "<<u<<' '<<answer<<' '<<i<<std::endl;
+// #endif
+//             buildV(C[i]);
+//         }
+//         buildV(u);
 #ifdef DDEBUG
 std::cout<<"    start "<<u<<' '<<answer<<std::endl;
 #endif

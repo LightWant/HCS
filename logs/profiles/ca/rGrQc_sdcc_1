@@ -1,0 +1,9 @@
+data/ca/rGrQc.txt
+load graph: n 26184 m 29060 maxD 83
+changeToCoreOrder:1ms
+coreNumber:7
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:1ms
+5-sdc:3

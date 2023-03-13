@@ -1,0 +1,9 @@
+data/Wiki-Vote.txt
+load graph: n 7115 m 201524 maxD 1065
+changeToCoreOrder:6ms
+k:2 q:12
+dk2
+d2kng
+init Hash
+time:13765ms
+Maximal K-Plex Count: 2919931

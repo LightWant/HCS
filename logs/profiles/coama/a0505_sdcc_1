@@ -1,0 +1,16 @@
+data/coama/a0505.txt
+load graph: n 410236 m 4878874 maxD 2760
+changeToCoreOrder:170ms
+coreNumber:10
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:1874ms
+5-sdc:15228126
+6-sdc:8585178
+7-sdc:3796728
+8-sdc:1255290
+9-sdc:294436
+10-sdc:45115
+11-sdc:3839
+12-sdc:116

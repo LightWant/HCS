@@ -1,0 +1,9 @@
+data/coama/ra0601.txt
+load graph: n 403394 m 4883716 maxD 2779
+changeToCoreOrder:188ms
+coreNumber:8
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:357ms
+5-sdc:2

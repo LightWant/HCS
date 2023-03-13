@@ -1,0 +1,9 @@
+data/dblp.txt
+load graph: n 425957 m 2099732 maxD 343
+changeToCoreOrder:67ms
+s:2 q:12 Q:12
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:5586ms
+12-plex:6920919626698475

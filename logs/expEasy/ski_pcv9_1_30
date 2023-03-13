@@ -1,0 +1,8 @@
+load graph: n 1696415 m 22190596 maxD 35455
+changeToCoreOrder:410ms
+s:1 q:30 Q:30
+plexCounting
+plexCountingV9.cpp::run fast upper bound
+init Hash
+time:159787721ms
+30-plex:3081839526810996441088

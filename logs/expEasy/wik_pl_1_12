@@ -1,0 +1,9 @@
+data/Wiki-Vote.txt
+load graph: n 7115 m 201524 maxD 1065
+changeToCoreOrder:5ms
+s:1 q:12
+kPlist
+kPList::run
+init Hash
+time:52223ms
+answer:136925535

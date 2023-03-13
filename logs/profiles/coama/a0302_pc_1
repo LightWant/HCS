@@ -1,0 +1,12 @@
+data/coama/a0302.txt
+load graph: n 262111 m 1799584 maxD 420
+changeToCoreOrder:53ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:399ms
+5-plex:462438
+6-plex:65632
+7-plex:3406
+8-plex:5

@@ -1,0 +1,21 @@
+data/randomGraphs/cai_95.txt
+load graph: n 26475 m 99574 maxD 2501
+changeToCoreOrder:2ms
+coreNumber:22
+s:1 q:5 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:145ms
+5-sdc:947444
+6-sdc:868697
+7-sdc:749023
+8-sdc:579571
+9-sdc:384900
+10-sdc:209886
+11-sdc:91933
+12-sdc:32068
+13-sdc:8722
+14-sdc:1762
+15-sdc:247
+16-sdc:22
+17-sdc:1

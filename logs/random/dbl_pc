@@ -1,0 +1,8 @@
+data/randomGraphs/dbl.txt
+load graph: n 425957 m 2097996 maxD 342
+changeToCoreOrder:71ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:109ms

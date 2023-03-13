@@ -1,0 +1,21 @@
+data/sampled/wik94.txt
+load graph: n 7115 m 189426 maxD 995
+changeToCoreOrder:5ms
+coreNumber:50
+k:20
+pivoter.h
+pivoter.cpp::run
+branches:690345
+time:68ms
+3-clique:504791
+4-clique:1426926
+5-clique:2391173
+6-clique:2622741
+7-clique:2033857
+8-clique:1180933
+9-clique:526625
+10-clique:177922
+11-clique:43245
+12-clique:6941
+13-clique:648
+14-clique:27

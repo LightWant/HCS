@@ -1,0 +1,16 @@
+load graph: n 4036538 m 69362378 maxD 14815
+changeToCoreOrder:1745ms
+coreNumber:360
+k:6
+kccPlusPivoter2.cpp::kccPlusPivoter
+kccPlusPivoter2.cpp::run
+time:465213ms
+6-clique:130726389106
+load graph: n 4036538 m 69362378 maxD 14815
+changeToCoreOrder:2675ms
+coreNumber:360
+k:6
+kccPlusPivoter2.cpp::kccPlusPivoter
+kccPlusPivoter2.cpp::run
+time:3392380ms
+6-clique:702534017166

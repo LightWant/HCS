@@ -1,0 +1,8 @@
+data/ca/rHepTh.txt
+load graph: n 68745 m 52162 maxD 68
+changeToCoreOrder:4ms
+s:1 q:5 Q:20
+plexCounting
+plexCountingV6.cpp::run
+init Hash
+time:2ms

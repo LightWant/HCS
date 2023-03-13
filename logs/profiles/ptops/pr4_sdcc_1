@@ -1,0 +1,10 @@
+data/ptops/pr4.txt
+load graph: n 10879 m 79806 maxD 100
+changeToCoreOrder:2ms
+coreNumber:7
+s:1 q:3 Q:20
+sdcCounting2DP::sdcCounting
+sdcCounting2DPUB.cpp::runinit Hash
+time:97ms
+3-sdc:559778
+4-sdc:39

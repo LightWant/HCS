@@ -1,0 +1,9 @@
+load graph: n 4036538 m 69362378 maxD 14815
+changeToCoreOrder:1742ms
+coreNumber:360
+k:7
+kccPivot.h
+kccPivot.cpp
+initHash
+time:3430008ms
+7-clique:449022421599565
