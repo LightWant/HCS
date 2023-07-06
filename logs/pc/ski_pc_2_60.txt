@@ -1,3 +1,0 @@
-load graph: n 1696415 m 22190596 maxD 35455
-changeToCoreOrder:413ms
-k:2 q:60

@@ -1,8 +1,0 @@
-load graph: n 403394 m 4886816 maxD 2752
-changeToCoreOrder:90ms
-s:1 q:8
-kPlist
-kPList::run
-init Hash
-time:1710ms
-answer:1877692

@@ -1,9 +1,0 @@
-data/soc-Epinions.txt
-load graph: n 75879 m 811480 maxD 3044
-changeToCoreOrder:20ms
-s:1 q:14 Q:14
-plexCounting
-plexCountingV6.cpp::run
-init Hash
-time:185914ms
-14-plex:45016867678

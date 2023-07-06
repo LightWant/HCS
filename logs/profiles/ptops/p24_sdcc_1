@@ -1,7 +1,0 @@
-data/ptops/p24.txt
-load graph: n 26518 m 130738 maxD 355
-changeToCoreOrder:4ms
-coreNumber:5
-s:1 q:3 Q:20
-sdcCounting2DP::sdcCounting
-sdcCounting2DPUB.cpp::runinit Hash

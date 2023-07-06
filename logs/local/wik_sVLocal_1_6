@@ -1,5 +1,0 @@
-data/Wiki-Vote.txt
-load graph: n 7115 m 201524 maxD 1065
-sdcLocal::sdcVLocal
-sdcVLocal.cpp::run
-time:10359ms

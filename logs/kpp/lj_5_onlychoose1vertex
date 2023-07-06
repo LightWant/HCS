@@ -1,8 +1,0 @@
-load graph: n 4036538 m 69362378 maxD 14815
-changeToCoreOrder:1771ms
-coreNumber:360
-k:5
-kccPlusPivoter.cpp::kccPlusPivoter
-kccPlusPivoter.cpp::run
-time:88405ms
-5-clique:11150496593

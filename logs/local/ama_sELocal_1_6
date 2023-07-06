@@ -1,4 +1,0 @@
-data/amazon/amazon0601.edges
-sdcLocal::sdcELocal
-sdcELocal.cpp::run
-time:1768ms

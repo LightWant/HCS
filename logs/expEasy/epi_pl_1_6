@@ -1,9 +1,0 @@
-data/soc-Epinions.txt
-load graph: n 75879 m 811480 maxD 3044
-changeToCoreOrder:20ms
-s:1 q:6
-kPlist
-kPList::run
-init Hash
-time:108720ms
-answer:988995416

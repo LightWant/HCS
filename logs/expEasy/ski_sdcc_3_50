@@ -1,8 +1,0 @@
-load graph: n 1696415 m 22190596 maxD 35455
-changeToCoreOrder:417ms
-coreNumber:111
-s:3 q:50 Q:50
-sdcCounting2DP::sdcCounting
-sdcCounting2DPUB.cpp::runinit Hash
-time:7355939ms
-50-sdc:7149916966315665408

@@ -1,8 +1,0 @@
-data/randomGraphs/dbl.txt
-load graph: n 425957 m 2097996 maxD 342
-changeToCoreOrder:72ms
-coreNumber:8
-s:1 q:5 Q:20
-sdcCounting2DP::sdcCounting
-sdcCounting2DPUB.cpp::runinit Hash
-time:91ms

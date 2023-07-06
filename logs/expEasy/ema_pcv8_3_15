@@ -1,9 +1,0 @@
-data/Email-EuAll.txt
-load graph: n 265009 m 728960 maxD 7636
-changeToCoreOrder:19ms
-s:3 q:15 Q:15
-plexCounting
-plexCountingV8.cpp::run
-init Hash
-time:4384081ms
-15-plex:16983229201

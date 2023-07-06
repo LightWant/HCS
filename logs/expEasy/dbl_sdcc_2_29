@@ -1,9 +1,0 @@
-data/dblp.txt
-load graph: n 425957 m 2099732 maxD 343
-changeToCoreOrder:67ms
-coreNumber:113
-s:2 q:29 Q:29
-sdcCounting2DP::sdcCounting
-sdcCounting2DPUB.cpp::runinit Hash
-time:65ms
-29-sdc:1045501724725186655233769472

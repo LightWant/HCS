@@ -1,5 +1,0 @@
-data/pokec/data.txt
-load graph: n 1632803 m 44603928 maxD 14854
-sdcLocal::sdcVLocal
-sdcVLocal.cpp::run
-time:84252ms

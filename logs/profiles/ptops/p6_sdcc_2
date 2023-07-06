@@ -1,8 +1,0 @@
-data/ptops/p6.txt
-load graph: n 8717 m 63050 maxD 115
-changeToCoreOrder:1ms
-coreNumber:9
-s:2 q:3 Q:20
-sdcCounting2DP::sdcCounting
-sdcCounting2DPUB.cpp::runinit Hash
-time:1ms

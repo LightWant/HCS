@@ -1,9 +1,0 @@
-data/dblp.txt
-load graph: n 425957 m 2099732 maxD 343
-changeToCoreOrder:71ms
-k:2 q:20
-dk2
-d2kng
-init Hash
-time:147ms
-Maximal K-Plex Count: 5049

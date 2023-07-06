@@ -1,9 +1,0 @@
-data/Wiki-Vote.txt
-load graph: n 7115 m 201524 maxD 1065
-changeToCoreOrder:6ms
-coreNumber:53
-s:2 q:7 Q:7
-sdcCounting2DP::sdcCounting
-sdcCounting2DPUB.cpp::runinit Hash
-time:134896ms
-7-sdc:712273798

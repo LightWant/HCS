@@ -1,9 +1,0 @@
-data/amazon/amazon0601.edges
-load graph: n 2443409 m 4886818 maxD 2752
-changeToCoreOrder:191ms
-s:1 q:6 Q:6
-plexCounting
-plexCountingV10.cpp::run fast upper bound+ fix pivot bug of v9
-init Hash
-time:2700ms
-6-plex:11138947

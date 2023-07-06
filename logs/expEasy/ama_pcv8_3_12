@@ -1,8 +1,0 @@
-load graph: n 403394 m 4886816 maxD 2752
-changeToCoreOrder:94ms
-s:3 q:12 Q:12
-plexCounting
-plexCountingV8.cpp::run
-init Hash
-time:1073ms
-12-plex:473476

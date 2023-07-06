@@ -1,9 +1,0 @@
-data/ca/rGrQc.txt
-load graph: n 26184 m 29060 maxD 83
-changeToCoreOrder:2ms
-s:1 q:5 Q:20
-plexCounting
-plexCountingV6.cpp::run
-init Hash
-time:2ms
-5-plex:17

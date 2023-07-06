@@ -1,9 +1,0 @@
-data/dblp.txt
-load graph: n 425957 m 2099732 maxD 343
-changeToCoreOrder:66ms
-s:2 q:7
-kPlist
-kPList::run
-init Hash
-time:1518860ms
-answer:68189177147

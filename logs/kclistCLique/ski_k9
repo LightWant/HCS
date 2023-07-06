@@ -1,9 +1,0 @@
-load graph: n 1696415 m 22190596 maxD 35455
-changeToCoreOrder:412ms
-coreNumber:111
-k:9
-kCListClique.h
-kClistClique.cpp
-initHash
-time:67659ms
-9-clique:2781731674867
